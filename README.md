@@ -1,1 +1,1 @@
-# fuyu-s-Claude
+# codefuyu

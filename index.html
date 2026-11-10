@@ -1,0 +1,6137 @@
+<!DOCTYPE html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>考研英语真题词汇</title>
+<style>
+:root{--bg:#f6f4ee;--sf:#fff;--tx:#1d2733;--mu:#6b7684;--ln:#dcd8cc;--ac:#1f5c4d;--ac2:#e8f0ec;--hl:#b4462f;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#14191d;--sf:#1d252b;--tx:#e6e9ec;--mu:#8e99a5;--ln:#2e3841;--ac:#6fc2a8;--ac2:#1f2f2a;--hl:#e58a72;color-scheme:dark}}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.5 -apple-system,"PingFang SC","Noto Sans SC","Microsoft YaHei",sans-serif}
+header{position:sticky;top:env(safe-area-inset-top,0px);background:var(--bg);padding:12px 14px 8px;border-bottom:1px solid var(--ln);z-index:5}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1{font-size:18px;margin:0 0 8px;font-family:Georgia,"Songti SC",serif}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+input,select,button{font:inherit;font-size:14px;color:var(--tx);background:var(--sf);border:1px solid var(--ln);border-radius:8px;padding:6px 10px}
+input{flex:1;min-width:120px}button{cursor:pointer}button.on{background:var(--ac);color:#fff;border-color:var(--ac)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac);outline-offset:1px}
+.stat{font-size:13px;color:var(--mu);margin-top:6px}
+main{max-width:720px;margin:0 auto;padding:10px 14px 40px}
+.gh{margin:18px 0 6px;font-size:13px;color:var(--mu);font-weight:600}
+.it{background:var(--sf);border:1px solid var(--ln);border-radius:10px;padding:10px 12px;margin-bottom:8px;display:flex;gap:10px}
+.it.k{opacity:.5}.it .b{flex:1;min-width:0}
+.w{font-weight:700;font-size:18px;font-family:Georgia,serif}.ip{color:var(--mu);font-size:14px;margin-left:6px}.ps{color:var(--ac);font-size:13px;margin-left:6px}
+.z{margin-top:2px}.e{color:var(--mu);font-size:14px}.m{font-size:12px;color:var(--hl);margin-top:2px}
+.hide{filter:blur(6px);cursor:pointer}.chk{align-self:flex-start;width:34px;height:34px;padding:0}
+#card{max-width:520px;margin:16px auto;background:var(--sf);border:1px solid var(--ln);border-radius:16px;min-height:260px;padding:26px 20px;text-align:center;cursor:pointer;display:flex;flex-direction:column;justify-content:center;gap:8px}
+#card .w{font-size:32px}#card .z{font-size:18px}
+.nav{display:flex;gap:8px;justify-content:center;margin-top:12px}.nav button{min-width:84px;padding:10px}
+.hint{text-align:center;color:var(--mu);font-size:13px;margin-top:8px}
+</style></head><body>
+<header>
+<h1>考研英语真题词汇</h1>
+<div class="row"><input id="q" type="search" placeholder="搜索单词 / 释义" aria-label="搜索">
+<select id="g" aria-label="按篇章筛选"><option value="">全部篇章</option></select></div>
+<div class="row" style="margin-top:6px">
+<button id="tList" class="on">列表</button><button id="tCard">卡片</button>
+<button id="fHide">遮住释义</button><button id="fUnk">只看未掌握</button><button id="fMul">多次出现</button></div>
+<div class="stat" id="stat"></div>
+</header>
+<main id="main"></main>
+<script>
+const D=[
+  {
+    "g": "2010 Text 1",
+    "w": "inexorable",
+    "p": "/ɪnˈeksərəbl/",
+    "t": "adj.",
+    "z": "不可阻挡的；无法改变的",
+    "e": "unstoppable; relentless; inevitable",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "coverage",
+    "p": "/ˈkʌvərɪdʒ/",
+    "t": "n.",
+    "z": "（新闻）报道；覆盖范围（arts coverage 艺术报道）",
+    "e": "reporting; treatment; scope",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "marvel",
+    "p": "/ˈmɑːvl/",
+    "t": "v./n.",
+    "z": "惊叹；感到惊奇（marvel at）；奇迹",
+    "e": "wonder; be amazed",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "ornament",
+    "p": "/ˈɔːnəmənt/",
+    "t": "n.",
+    "z": "装饰；增色的人或物（an ornament to sth 为…增光添彩）",
+    "e": "decoration; adornment; credit",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "calling",
+    "p": "/ˈkɔːlɪŋ/",
+    "t": "n.",
+    "z": "使命；天职；职业（熟词僻义）",
+    "e": "vocation; mission; profession",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "virtually",
+    "p": "/ˈvɜːtʃuəli/",
+    "t": "adv.",
+    "z": "几乎；实际上",
+    "e": "almost; nearly; practically",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "cricket",
+    "p": "/ˈkrɪkɪt/",
+    "t": "n.",
+    "z": "板球；蟋蟀",
+    "e": "bat-and-ball game; insect",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "stylist",
+    "p": "/ˈstaɪlɪst/",
+    "t": "n.",
+    "z": "文体家；文笔优美的作家；造型师",
+    "e": "fine writer; master of style",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "honored ← honor",
+    "p": "/ˈɒnə(r)/",
+    "t": "v.（过去分词）",
+    "z": "授予荣誉；使增光（be so honored 获此殊荣）",
+    "e": "decorate; recognize; pay tribute to",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "suitability",
+    "p": "/ˌsuːtəˈbɪləti/",
+    "t": "n.",
+    "z": "适合性；适宜（题目）",
+    "e": "appropriateness; fitness",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "Mournful ← mournful",
+    "p": "/ˈmɔːnfl/",
+    "t": "adj.",
+    "z": "悲哀的；令人惋惜的（题目）",
+    "e": "sad; sorrowful; melancholy",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 1",
+    "w": "Prominent ← prominent",
+    "p": "/ˈprɒmɪnənt/",
+    "t": "adj.",
+    "z": "著名的；重要的；突出的（题目）",
+    "e": "eminent; famous; noticeable",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "lifting ← lift",
+    "p": "/lɪft/",
+    "t": "v.",
+    "z": "举起；提起",
+    "e": "raise; pick up; hoist",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "emerging",
+    "p": "/ɪˈmɜːdʒɪŋ/",
+    "t": "adj.",
+    "z": "新兴的；新出现的",
+    "e": "developing; rising; budding",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "exclusive",
+    "p": "/ɪkˈskluːsɪv/",
+    "t": "adj.",
+    "z": "独有的；排他的（exclusive rights 专有权）",
+    "e": "sole; unique; restricted",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "hedging ← hedge",
+    "p": "/hedʒ/",
+    "t": "v.",
+    "z": "对冲（风险）；防范（hedge risk）",
+    "e": "protect against; insure against",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "stating ← state",
+    "p": "/steɪt/",
+    "t": "v.",
+    "z": "声明；陈述",
+    "e": "declare; announce; say",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "judges ← judge",
+    "p": "/dʒʌdʒ/",
+    "t": "n.",
+    "z": "法官；裁判",
+    "e": "justice; magistrate",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "allocation",
+    "p": "/ˌæləˈkeɪʃn/",
+    "t": "n.",
+    "z": "分配；配置（asset allocation 资产配置）（题目）",
+    "e": "distribution; allotment",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "authorization",
+    "p": "/ˌɔːθəraɪˈzeɪʃn/",
+    "t": "n.",
+    "z": "授权；批准（题目）",
+    "e": "approval; permission; sanction",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "complies with ← comply with",
+    "p": "/kəmˈplaɪ wɪð/",
+    "t": "phr v.",
+    "z": "遵守；依从（题目）",
+    "e": "obey; follow; observe",
+    "m": "2010 Text 2 · 2019 Text 4 · （2 次）"
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "goodwill",
+    "p": "/ˌɡʊdˈwɪl/",
+    "t": "n.",
+    "z": "善意；友好（题目）",
+    "e": "friendliness; kindness",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "esteem",
+    "p": "/ɪˈstiːm/",
+    "t": "n.",
+    "z": "尊重；敬重（题目）",
+    "e": "respect; regard; admiration",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "incidence",
+    "p": "/ˈɪnsɪdəns/",
+    "t": "n.",
+    "z": "发生率；发生（题目）",
+    "e": "rate; frequency; occurrence",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 2",
+    "w": "looming ← loom",
+    "p": "/luːm/",
+    "t": "v.",
+    "z": "（危险）逼近；隐约出现（a looming threat 迫在眉睫的威胁）（题目）",
+    "e": "approach; impend; threaten",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "intuitively",
+    "p": "/ɪnˈtjuːɪtɪvli/",
+    "t": "adv.",
+    "z": "直觉上；凭直觉地",
+    "e": "instinctively; naturally",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "compelling",
+    "p": "/kəmˈpelɪŋ/",
+    "t": "adj.",
+    "z": "令人信服的；引人入胜的",
+    "e": "convincing; persuasive; gripping",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "derives from ← derive from",
+    "p": "/dɪˈraɪv frɒm/",
+    "t": "phr v.",
+    "z": "源自；来自",
+    "e": "come from; stem from; originate in",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "cursory",
+    "p": "/ˈkɜːsəri/",
+    "t": "adj.",
+    "z": "粗略的；草率的",
+    "e": "superficial; hasty; quick",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "promoting ← promote",
+    "p": "/prəˈməʊt/",
+    "t": "v.",
+    "z": "推广；宣传；促进",
+    "e": "advertise; publicize; boost",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "fits nicely with ← fit with",
+    "p": "/fɪt wɪð/",
+    "t": "phr v.",
+    "z": "与…相符；与…吻合（fit nicely with 非常吻合）",
+    "e": "match; be consistent with; tally with",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "celebrities ← celebrity",
+    "p": "/səˈlebrəti/",
+    "t": "n.",
+    "z": "名人；明星",
+    "e": "famous person; star",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "primarily",
+    "p": "/praɪˈmerəli/",
+    "t": "adv.",
+    "z": "主要地；首先",
+    "e": "mainly; chiefly; principally",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "interpersonal",
+    "p": "/ˌɪntəˈpɜːsənl/",
+    "t": "adj.",
+    "z": "人际的；人与人之间的",
+    "e": "between people; social",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "precisely",
+    "p": "/prɪˈsaɪsli/",
+    "t": "adv.",
+    "z": "恰恰；正是；精确地",
+    "e": "exactly; just; accurately",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "cascade",
+    "p": "/kæˈskeɪd/",
+    "t": "n.",
+    "z": "连锁反应；一连串；小瀑布",
+    "e": "chain reaction; series; waterfall",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "propagate",
+    "p": "/ˈprɒpəɡeɪt/",
+    "t": "v.",
+    "z": "传播；扩散；繁殖",
+    "e": "spread; disseminate; reproduce",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "dynamics",
+    "p": "/daɪˈnæmɪks/",
+    "t": "n.",
+    "z": "动态；动力（机制）",
+    "e": "workings; forces; mechanism",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "simulations ← simulation",
+    "p": "/ˌsɪmjuˈleɪʃn/",
+    "t": "n.",
+    "z": "模拟；仿真（computer simulations）",
+    "e": "modelling; imitation",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "manipulating ← manipulate",
+    "p": "/məˈnɪpjuleɪt/",
+    "t": "v.",
+    "z": "（巧妙地）控制；操纵；调整（变量）",
+    "e": "control; adjust; handle",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "exemplify",
+    "p": "/ɪɡˈzemplɪfaɪ/",
+    "t": "v.",
+    "z": "举例说明；是…的典型（题目）",
+    "e": "illustrate; typify; demonstrate",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "intuitive",
+    "p": "/ɪnˈtjuːɪtɪv/",
+    "t": "adj.",
+    "z": "直觉的；凭直觉的（题目）",
+    "e": "instinctive; innate",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "serves as ← serve as",
+    "p": "/sɜːv æz/",
+    "t": "phr v.",
+    "z": "充当；起…作用（题目）",
+    "e": "act as; function as; work as",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "validity",
+    "p": "/vəˈlɪdəti/",
+    "t": "n.",
+    "z": "有效性；正确性（题目）",
+    "e": "soundness; legitimacy; force",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "readiness to",
+    "p": "/ˈredinəs tə/",
+    "t": "n.",
+    "z": "乐意；愿意（readiness to do）（题目）",
+    "e": "willingness; eagerness",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 3",
+    "w": "inclination to",
+    "p": "/ˌɪŋklɪˈneɪʃn tə/",
+    "t": "n.",
+    "z": "倾向；意向（inclination to do）（题目）",
+    "e": "tendency; disposition; propensity",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "fetch",
+    "p": "/fetʃ/",
+    "t": "v.",
+    "z": "卖得（价钱）（熟词僻义）；取来",
+    "e": "sell for; bring in; go and get",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "proper",
+    "p": "/ˈprɒpə(r)/",
+    "t": "adj.",
+    "z": "正常的；恰当的",
+    "e": "right; appropriate; correct",
+    "m": "2010 Text 4 · 2023 Text 2 · （2 次）"
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "compromised ← compromise",
+    "p": "/ˈkɒmprəmaɪz/",
+    "t": "v.（过去分词）",
+    "z": "损害；危及（be compromised 受到损害）；妥协",
+    "e": "undermine; weaken; damage",
+    "m": "2010 Text 4 · 2020 Text 1 · （2 次）"
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "toxic",
+    "p": "/ˈtɒksɪk/",
+    "t": "adj.",
+    "z": "有毒的；（资产）不良的（toxic assets 有毒资产）",
+    "e": "poisonous; harmful; bad",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "bruising",
+    "p": "/ˈbruːzɪŋ/",
+    "t": "adj.",
+    "z": "激烈的；伤感情的",
+    "e": "fierce; tough; hard-fought",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "overstate",
+    "p": "/ˌəʊvəˈsteɪt/",
+    "t": "v.",
+    "z": "夸大；言过其实",
+    "e": "exaggerate; overemphasize",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "combative",
+    "p": "/ˈkɒmbətɪv/",
+    "t": "adj.",
+    "z": "好斗的；好争论的",
+    "e": "aggressive; confrontational; argumentative",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "misinterpreted ← misinterpret",
+    "p": "/ˌmɪsɪnˈtɜːprɪt/",
+    "t": "v.",
+    "z": "误解；曲解（题目）",
+    "e": "misunderstand; misread",
+    "m": ""
+  },
+  {
+    "g": "2010 Text 4",
+    "w": "indicators ← indicator",
+    "p": "/ˈɪndɪkeɪtə(r)/",
+    "t": "n.",
+    "z": "指标；指示物（题目）",
+    "e": "sign; signal; measure",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "announcement",
+    "p": "/əˈnaʊnsmənt/",
+    "t": "n.",
+    "z": "宣布；公告",
+    "e": "declaration; statement; notice",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "unpretentious",
+    "p": "/ˌʌnprɪˈtenʃəs/",
+    "t": "adj.",
+    "z": "谦逊的；不张扬的；朴实的",
+    "e": "modest; unassuming; humble",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "substitute",
+    "p": "/ˈsʌbstɪtjuːt/",
+    "t": "n./v.",
+    "z": "替代品；代替（be no substitute for 无法替代）",
+    "e": "replacement; alternative",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "overestimate",
+    "p": "/ˌəʊvərˈestɪmeɪt/",
+    "t": "v.",
+    "z": "高估（题目）",
+    "e": "overrate; overvalue; exaggerate",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "inferior",
+    "p": "/ɪnˈfɪəriə(r)/",
+    "t": "adj.",
+    "z": "较差的；次等的（be inferior to 不如）（题目）",
+    "e": "worse; lower; second-rate",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "accessible",
+    "p": "/əkˈsesəbl/",
+    "t": "adj.",
+    "z": "易获得的；可接近的（be accessible to）（题目）",
+    "e": "available; obtainable; reachable",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 1",
+    "w": "revitalizing ← revitalize",
+    "p": "/ˌriːˈvaɪtəlaɪz/",
+    "t": "v.",
+    "z": "使恢复活力；振兴（题目）",
+    "e": "revive; rejuvenate; regenerate",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "aspirations ← aspiration",
+    "p": "/ˌæspəˈreɪʃn/",
+    "t": "n.",
+    "z": "抱负；志向；渴望",
+    "e": "ambition; goal; desire",
+    "m": "2011 Text 2 · 2020 Text 1 · （2 次）"
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "unconventional",
+    "p": "/ˌʌnkənˈvenʃənl/",
+    "t": "adj.",
+    "z": "非常规的；不落俗套的",
+    "e": "unusual; unorthodox; atypical",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "spurred ← spur",
+    "p": "/spɜː(r)/",
+    "t": "v.",
+    "z": "激励；促使（be spurred by 受…驱使）（题目）",
+    "e": "motivate; prompt; drive",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "guarded against ← guard against",
+    "p": "/ɡɑːd əˈɡenst/",
+    "t": "phr v.",
+    "z": "防范；提防（题目）",
+    "e": "protect against; prevent; beware of",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "cling to",
+    "p": "/klɪŋ tə/",
+    "t": "phr v.",
+    "z": "紧抓不放；坚守（cling to one's post 恋栈不去）（题目）",
+    "e": "hold on to; stick to; adhere to",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 2",
+    "w": "performers ← performer",
+    "p": "/pəˈfɔːmə(r)/",
+    "t": "n.",
+    "z": "表现者（top performers 业绩出众者）；表演者（题目）",
+    "e": "achiever; player; entertainer",
+    "m": "2011 Text 2 · 2021 Text 3 · （2 次）"
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "rough",
+    "p": "/rʌf/",
+    "t": "adj.",
+    "z": "粗略的；大致的（a rough guide 大致的指南）",
+    "e": "approximate; general; broad",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "leverage",
+    "p": "/ˈliːvərɪdʒ/",
+    "t": "v./n.",
+    "z": "利用；借助（leverage owned media）；杠杆作用",
+    "e": "use; exploit; harness",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "infancy",
+    "p": "/ˈɪnfənsi/",
+    "t": "n.",
+    "z": "初期；起步阶段（in its infancy）；婴儿期",
+    "e": "early stage; beginning",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "complementary",
+    "p": "/ˌkɒmplɪˈmentri/",
+    "t": "adj.",
+    "z": "互补的；补充的",
+    "e": "supplementary; matching; completing",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "communications",
+    "p": "/kəˌmjuːnɪˈkeɪʃnz/",
+    "t": "n.",
+    "z": "通信；传播（communications choices 传播渠道选择）",
+    "e": "means of sending information; messaging",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "stakeholders ← stakeholder",
+    "p": "/ˈsteɪkhəʊldə(r)/",
+    "t": "n.",
+    "z": "利益相关者；利害关系人",
+    "e": "interested party; person with a stake",
+    "m": "2011 Text 3 · 2019 Text 1 · （2 次）"
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "passionate",
+    "p": "/ˈpæʃənət/",
+    "t": "adj.",
+    "z": "热衷的；充满热情的（passionate about）",
+    "e": "enthusiastic; keen; ardent",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "deserve",
+    "p": "/dɪˈzɜːv/",
+    "t": "v.",
+    "z": "应得；值得（题目）",
+    "e": "merit; earn; be worthy of",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 3",
+    "w": "comments ← comment",
+    "p": "/ˈkɒment/",
+    "t": "n.",
+    "z": "评论；意见（题目）",
+    "e": "remark; opinion; criticism",
+    "m": "2011 Text 3 · 2023 Text 3 · 2025 Text 4 · （3 次）"
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "dampen",
+    "p": "/ˈdæmpən/",
+    "t": "v.",
+    "z": "抑制；使低落（dampen our moods 使情绪低落）",
+    "e": "depress; reduce; lessen",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "gratification",
+    "p": "/ˌɡrætɪfɪˈkeɪʃn/",
+    "t": "n.",
+    "z": "满足；满足感",
+    "e": "satisfaction; pleasure; fulfilment",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "procreation",
+    "p": "/ˌprəʊkriˈeɪʃn/",
+    "t": "n.",
+    "z": "生育；繁衍",
+    "e": "reproduction; having children",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "dumb",
+    "p": "/dʌm/",
+    "t": "adj.",
+    "z": "愚蠢的（口语）；哑的",
+    "e": "stupid; foolish; silly",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "haircut",
+    "p": "/ˈheəkʌt/",
+    "t": "n.",
+    "z": "理发；发型",
+    "e": "trim; hairstyle",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "parenthood",
+    "p": "/ˈpeərənthʊd/",
+    "t": "n.",
+    "z": "为人父母；亲职",
+    "e": "being a parent",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "subconscious",
+    "p": "/ˌsʌbˈkɒnʃəs/",
+    "t": "adj.",
+    "z": "潜意识的",
+    "e": "unconscious; hidden; unaware",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "dissatisfactions ← dissatisfaction",
+    "p": "/ˌdɪsˌsætɪsˈfækʃn/",
+    "t": "n.",
+    "z": "不满；不满足",
+    "e": "discontent; displeasure",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "pregnant",
+    "p": "/ˈpreɡnənt/",
+    "t": "adj.",
+    "z": "怀孕的（题目）",
+    "e": "expecting; carrying a child",
+    "m": ""
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "intensifies ← intensify",
+    "p": "/ɪnˈtensɪfaɪ/",
+    "t": "v.",
+    "z": "加剧；增强（题目）",
+    "e": "heighten; strengthen; increase",
+    "m": "2011 Text 4 · 2021 Text 4 · （2 次）"
+  },
+  {
+    "g": "2011 Text 4",
+    "w": "rearing ← rear",
+    "p": "/rɪə(r)/",
+    "t": "v.",
+    "z": "抚养；养育（child rearing 育儿）（题目）",
+    "e": "raise; bring up; nurture",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "convincingly",
+    "p": "/kənˈvɪnsɪŋli/",
+    "t": "adv.",
+    "z": "令人信服地；有说服力地",
+    "e": "persuasively; in a way that makes people believe something",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "irrelevant",
+    "p": "/ɪˈreləvənt/",
+    "t": "adj.",
+    "z": "不相关的；不切题的",
+    "e": "unrelated; not connected with the subject",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "glaring",
+    "p": "/ˈɡleərɪŋ/",
+    "t": "adj.",
+    "z": "显而易见的；明显的（通常指错误或缺点）",
+    "e": "obvious; very noticeable, especially something bad",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "subtle",
+    "p": "/ˈsʌtl/",
+    "t": "adj.",
+    "z": "不易察觉的；微妙的；巧妙的",
+    "e": "not obvious; delicate; understated",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "obstacle",
+    "p": "/ˈɒbstəkl/",
+    "t": "n.",
+    "z": "障碍；阻碍（题目）",
+    "e": "barrier; hindrance; something that blocks progress",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "undesirable",
+    "p": "/ˌʌndɪˈzaɪərəbl/",
+    "t": "adj.",
+    "z": "不受欢迎的；不良的；不合意的（题目）",
+    "e": "unwanted; objectionable; not wanted or suitable",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 1",
+    "w": "adequately",
+    "p": "/ˈædɪkwətli/",
+    "t": "adv.",
+    "z": "充分地；足够好地；恰当地（题目）",
+    "e": "sufficiently; satisfactorily; well enough",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "commitment",
+    "p": "/kəˈmɪtmənt/",
+    "t": "n.",
+    "z": "承诺；保证；投入（文中指遵守核电规定的承诺）",
+    "e": "promise; pledge; dedication",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "corporation",
+    "p": "/ˌkɔːpəˈreɪʃn/",
+    "t": "n.",
+    "z": "公司；企业；法人团体",
+    "e": "company; firm; business organization",
+    "m": "2012 Text 2 · 2019 Text 1 · （2 次）"
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "pipe",
+    "p": "/paɪp/",
+    "t": "n.",
+    "z": "管子；管道（underground pipe system 地下管道系统）",
+    "e": "tube; conduit; a hollow tube for carrying water or gas",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "reaffirming ← reaffirm",
+    "p": "/ˌriːəˈfɜːm/",
+    "t": "v.",
+    "z": "重申；再次确认（题目）",
+    "e": "restate; confirm again",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "dishonoring ← dishonor",
+    "p": "/dɪsˈɒnə(r)/",
+    "t": "v.",
+    "z": "违背；不履行（承诺或协议）（题目）",
+    "e": "fail to keep a promise; break an agreement",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "entering into ← enter into",
+    "p": "/ˈentə(r) ˈɪntuː/",
+    "t": "phr. v.",
+    "z": "订立；达成（enter into an agreement 签订协议）（题目）",
+    "e": "make an agreement; become a party to an agreement",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 2",
+    "w": "patchwork",
+    "p": "/ˈpætʃwɜːk/",
+    "t": "n.",
+    "z": "拼凑物；杂凑的体系（patchwork regulations 零散、不统一的法规）（题目）",
+    "e": "a mixture of different parts; a fragmented collection",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "feverish",
+    "p": "/ˈfiːvərɪʃ/",
+    "t": "adj.",
+    "z": "狂热的；亢奋的；忙乱的（feverish world 热火朝天的世界）；发烧的",
+    "e": "frenzied; hectic; excited",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "indictment",
+    "p": "/ɪnˈdaɪtmənt/",
+    "t": "n.",
+    "z": "控诉；指控；谴责（an indictment of）；起诉书",
+    "e": "accusation; condemnation; charge",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "consumers ← consumer",
+    "p": "/kənˈsjuːmə(r)/",
+    "t": "n.",
+    "z": "消费者",
+    "e": "customer; buyer; shopper",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "victims ← victim",
+    "p": "/ˈvɪktɪm/",
+    "t": "n.",
+    "z": "受害者；牺牲品",
+    "e": "casualty; sufferer",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "chemicals ← chemical",
+    "p": "/ˈkemɪkl/",
+    "t": "n.",
+    "z": "化学品；化学制剂",
+    "e": "chemical substance; compound",
+    "m": "2013 Text 1 · 2022 Text 1 · （2 次）"
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "advocates ← advocate",
+    "p": "/ˈædvəkət/",
+    "t": "n.",
+    "z": "倡导者；拥护者",
+    "e": "supporter; champion; proponent",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "sustainability",
+    "p": "/səˌsteɪnəˈbɪləti/",
+    "t": "n.",
+    "z": "可持续性；可持续发展",
+    "e": "ability to be maintained; environmental balance",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 1",
+    "w": "accusation",
+    "p": "/ˌækjuˈzeɪʃn/",
+    "t": "n.",
+    "z": "指控；指责（题目）",
+    "e": "charge; allegation; blame",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 2",
+    "w": "companies ← company",
+    "p": "/ˈkʌmpəni/",
+    "t": "n.",
+    "z": "公司",
+    "e": "firm; business; corporation",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 2",
+    "w": "horrified",
+    "p": "/ˈhɒrɪfaɪd/",
+    "t": "adj.",
+    "z": "惊恐的；震惊的",
+    "e": "shocked; appalled; dismayed",
+    "m": ""
+  },
+  {
+    "g": "2013 Text 2",
+    "w": "stick",
+    "p": "/stɪk/",
+    "t": "v.",
+    "z": "坚持；继续使用（stick with default settings 沿用默认设置）",
+    "e": "continue with; keep to; stay with",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "eligible",
+    "p": "/ˈelɪdʒəbl/",
+    "t": "adj.",
+    "z": "有资格的；合格的（be eligible for 有资格获得）",
+    "e": "entitled; qualified",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "subsidises ← subsidise",
+    "p": "/ˈsʌbsɪdaɪz/",
+    "t": "v.",
+    "z": "资助；补贴（subsidises laziness 文中贬义：变相纵容懒惰）",
+    "e": "fund; give a subsidy to; help pay for",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "deserving",
+    "p": "/dɪˈzɜːvɪŋ/",
+    "t": "adj.",
+    "z": "值得帮助的；应得的（the most deserving claimants 最应得救济的申请人）",
+    "e": "worthy (of help or support)",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "prospect",
+    "p": "/ˈprɒspekt/",
+    "t": "n.",
+    "z": "可能性；前景（the prospect of doing 做…的可能）",
+    "e": "possibility; likelihood; chance",
+    "m": "2014 Text 1 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "prompted ← prompt",
+    "p": "/prɒmpt/",
+    "t": "v.",
+    "z": "促使；激起（题目）",
+    "e": "cause; motivate; provoke",
+    "m": "2014 Text 1 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "enraged ← enrage",
+    "p": "/ɪnˈreɪdʒ/",
+    "t": "v.",
+    "z": "激怒；使暴怒（feel enraged 感到愤怒）（题目）",
+    "e": "make sb very angry",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 1",
+    "w": "laziness",
+    "p": "/ˈleɪzinəs/",
+    "t": "n.",
+    "z": "懒惰（正文＋题目）",
+    "e": "idleness; unwillingness to work",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "nostalgia",
+    "p": "/nɒˈstældʒə/",
+    "t": "n.",
+    "z": "怀旧；怀念往昔",
+    "e": "longing for the past; wistfulness",
+    "m": "2016 Text 4 · 2026 Text 2 · （2 次）"
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "infrastructure",
+    "p": "/ˈɪnfrəstrʌktʃə(r)/",
+    "t": "n.",
+    "z": "基础设施；基础体系",
+    "e": "basic facilities; framework",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "figure out",
+    "p": "/ˌfɪɡər ˈaʊt/",
+    "t": "phr v.",
+    "z": "弄明白；想出；算出",
+    "e": "work out; understand; solve",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "accelerate",
+    "p": "/əkˈseləreɪt/",
+    "t": "v.",
+    "z": "（使）加速；促进",
+    "e": "speed up; quicken; hasten",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "streaming",
+    "p": "/ˈstriːmɪŋ/",
+    "t": "n./adj.",
+    "z": "流媒体（的）；流式传输",
+    "e": "online transmission of audio/video",
+    "m": "2016 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "blunder",
+    "p": "/ˈblʌndə(r)/",
+    "t": "n./v.",
+    "z": "n. 大错 v. 犯大错",
+    "e": "n. serious mistake; error v. make a mistake",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "aggressive",
+    "p": "/əˈɡresɪv/",
+    "t": "adj.",
+    "z": "① 积极进取的；强势的 ② 好斗的",
+    "e": "① forceful; determined ② hostile",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "strategic adjustments ← strategic adjustment",
+    "p": "/strəˈtiːdʒɪk əˈdʒʌstmənt/",
+    "t": "n. phr.",
+    "z": "战略性调整",
+    "e": "planned changes in strategy",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "glory",
+    "p": "/ˈɡlɔːri/",
+    "t": "n.",
+    "z": "荣耀；辉煌（时期）",
+    "e": "fame; honour; splendour",
+    "m": ""
+  },
+  {
+    "g": "2016 Text 4",
+    "w": "cherish",
+    "p": "/ˈtʃerɪʃ/",
+    "t": "v.",
+    "z": "珍爱；珍视；怀有（希望）",
+    "e": "treasure; value; hold dear",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "applied ← apply",
+    "p": "/əˈplaɪ/",
+    "t": "v.",
+    "z": "应用；运用（apply A to B）",
+    "e": "use; put into practice",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "tech",
+    "p": "/tek/",
+    "t": "n./adj.",
+    "z": "科技；技术的（tech giants 科技巨头）",
+    "e": "technology; technological",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "giants ← giant",
+    "p": "/ˈdʒaɪənt/",
+    "t": "n.",
+    "z": "巨头；大型企业",
+    "e": "major company; leader",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "commissioner",
+    "p": "/kəˈmɪʃənə(r)/",
+    "t": "n.",
+    "z": "专员；委员（information commissioner 信息专员）",
+    "e": "official in charge; officer",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "damning",
+    "p": "/ˈdæmɪŋ/",
+    "t": "adj.",
+    "z": "强烈谴责的；极为不利的",
+    "e": "highly critical; condemning",
+    "m": "2018 Text 3 · 2021 Text 3 · （2 次）"
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "handed over ← hand over",
+    "p": "/ˌhænd ˈəʊvə(r)/",
+    "t": "phr v.",
+    "z": "移交；交出",
+    "e": "pass; transfer; give",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "trust",
+    "p": "/trʌst/",
+    "t": "n.",
+    "z": "（NHS trust）医疗机构；信托组织",
+    "e": "organization; foundation",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "distinction",
+    "p": "/dɪˈstɪŋkʃn/",
+    "t": "n.",
+    "z": "区别；区分",
+    "e": "difference; contrast",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "misses ← miss",
+    "p": "/mɪs/",
+    "t": "v.",
+    "z": "忽略；没抓住（miss the point）",
+    "e": "overlook; fail to notice",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "processing",
+    "p": "/ˈprəʊsesɪŋ/",
+    "t": "n.",
+    "z": "（数据）处理；加工",
+    "e": "handling; treatment",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "aggregation",
+    "p": "/ˌæɡrɪˈɡeɪʃn/",
+    "t": "n.",
+    "z": "聚合；汇总",
+    "e": "collection; combination",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "possession",
+    "p": "/pəˈzeʃn/",
+    "t": "n.",
+    "z": "拥有；占有",
+    "e": "ownership; holding",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "bits ← bit",
+    "p": "/bɪt/",
+    "t": "n.",
+    "z": "比特；（数字）信息",
+    "e": "unit of data; pieces of information",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "identifiable",
+    "p": "/aɪˌdentɪˈfaɪəbl/",
+    "t": "adj.",
+    "z": "可识别的；可确认身份的",
+    "e": "recognizable; distinguishable",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "algorithms ← algorithm",
+    "p": "/ˈælɡərɪðəm/",
+    "t": "n.",
+    "z": "算法",
+    "e": "set of rules for calculation",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "pharma",
+    "p": "/ˈfɑːmə/",
+    "t": "n.",
+    "z": "制药业；制药公司（Big Pharma）",
+    "e": "pharmaceutical industry",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 3",
+    "w": "gigantic",
+    "p": "/dʒaɪˈɡæntɪk/",
+    "t": "adj.",
+    "z": "巨大的；极大的",
+    "e": "huge; enormous; massive",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "fiscal",
+    "p": "/ˈfɪskl/",
+    "t": "adj.",
+    "z": "财政的；财务的（fiscal 2016 = 2016 财年）",
+    "e": "financial; budgetary",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "revenue",
+    "p": "/ˈrevənjuː/",
+    "t": "n.",
+    "z": "收入；财政收入",
+    "e": "income; earnings",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "unfunded",
+    "p": "/ʌnˈfʌndɪd/",
+    "t": "adj.",
+    "z": "资金未落实的（unfunded liabilities 无资金准备的负债）",
+    "e": "not provided with money",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "retirement",
+    "p": "/rɪˈtaɪəmənt/",
+    "t": "n.",
+    "z": "退休；退休（费用）",
+    "e": "stopping work because of age",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "squeeze",
+    "p": "/skwiːz/",
+    "t": "n.",
+    "z": "挤压；（财务）困境",
+    "e": "pressure; difficulty; pinch",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "permanently",
+    "p": "/ˈpɜːmənəntli/",
+    "t": "adv.",
+    "z": "永久地；长期地",
+    "e": "for ever; lastingly",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "status quo",
+    "p": "/ˌsteɪtəs ˈkwəʊ/",
+    "t": "n.",
+    "z": "现状",
+    "e": "existing state of affairs",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "Democrats ← Democrat",
+    "p": "/ˈdeməkræt/",
+    "t": "n.",
+    "z": "（美国）民主党人",
+    "e": "member of the Democratic Party",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "heaviest ← heavy",
+    "p": "/ˈhevi/",
+    "t": "adj.",
+    "z": "（用量）最大的（heaviest users）",
+    "e": "most frequent; largest",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "retirees ← retiree",
+    "p": "/rɪˌtaɪəˈriː/",
+    "t": "n.",
+    "z": "退休人员",
+    "e": "retired person; pensioner",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "bare",
+    "p": "/beə(r)/",
+    "t": "adj.",
+    "z": "最低限度的（bare minimum）；赤裸的",
+    "e": "basic; minimum",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "omission",
+    "p": "/əˈmɪʃn/",
+    "t": "n.",
+    "z": "遗漏；疏忽",
+    "e": "exclusion; oversight",
+    "m": "2018 Text 4 · 2025 Text 1 · （2 次）"
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "personnel",
+    "p": "/ˌpɜːsəˈnel/",
+    "t": "n.",
+    "z": "人员；全体员工",
+    "e": "staff; employees; workforce",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "eliminating ← eliminate",
+    "p": "/ɪˈlɪmɪneɪt/",
+    "t": "v.",
+    "z": "取消；消除",
+    "e": "remove; get rid of; abolish",
+    "m": "2018 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "consensus",
+    "p": "/kənˈsensəs/",
+    "t": "n.",
+    "z": "共识；一致意见",
+    "e": "agreement; accord",
+    "m": "2018 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "interference",
+    "p": "/ˌɪntəˈfɪərəns/",
+    "t": "n.",
+    "z": "干涉；干预",
+    "e": "intervention; meddling",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "inadequate",
+    "p": "/ɪnˈædɪkwət/",
+    "t": "adj.",
+    "z": "不足的；不充分的",
+    "e": "insufficient; deficient",
+    "m": "2018 Text 4 · 2023 Text 2 · 2026 Text 3 · （3 次）"
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "shrinking ← shrink",
+    "p": "/ʃrɪŋk/",
+    "t": "v.",
+    "z": "缩小；减少；萎缩",
+    "e": "decrease; diminish; contract",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "discontent",
+    "p": "/ˌdɪskənˈtent/",
+    "t": "n.",
+    "z": "不满",
+    "e": "dissatisfaction; displeasure",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 4",
+    "w": "Band-Aid",
+    "p": "/ˈbænd eɪd/",
+    "t": "n.",
+    "z": "创可贴；（喻）权宜之计",
+    "e": "temporary solution; quick fix",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "corporations ← corporation",
+    "p": "/ˌkɔːpəˈreɪʃn/",
+    "t": "n.",
+    "z": "公司；企业",
+    "e": "company; firm; business",
+    "m": "2012 Text 2 · 2019 Text 1 · （2 次）"
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "quotes ← quote",
+    "p": "/kwəʊt/",
+    "t": "v.",
+    "z": "引用；引述",
+    "e": "cite; repeat the words of",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "plums ← plum",
+    "p": "/plʌm/",
+    "t": "n.",
+    "z": "李子；（喻）好东西",
+    "e": "fruit; something desirable",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "pudding",
+    "p": "/ˈpʊdɪŋ/",
+    "t": "n.",
+    "z": "布丁；甜点",
+    "e": "dessert; sweet",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "dubbed ← dub",
+    "p": "/dʌb/",
+    "t": "v.",
+    "z": "把……称为（be dubbed + 名称）",
+    "e": "call; name; nickname",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "equities ← equity",
+    "p": "/ˈekwəti/",
+    "t": "n.",
+    "z": "股票；股权",
+    "e": "shares; stocks",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "performance",
+    "p": "/pəˈfɔːməns/",
+    "t": "n.",
+    "z": "业绩；表现（performance bonus 绩效奖金）",
+    "e": "results; achievement",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "substantial",
+    "p": "/səbˈstænʃl/",
+    "t": "adj.",
+    "z": "相当大的；大量的",
+    "e": "considerable; large; significant",
+    "m": "2019 Text 1 · 2021 Text 1 · （2 次）"
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "disclosure",
+    "p": "/dɪsˈkləʊʒə(r)/",
+    "t": "n.",
+    "z": "披露；公开",
+    "e": "revelation; making known",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "compensation",
+    "p": "/ˌkɒmpenˈseɪʃn/",
+    "t": "n.",
+    "z": "薪酬；报酬",
+    "e": "pay; remuneration",
+    "m": "2019 Text 1 · 2021 Text 1 · （2 次）"
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "stakeholders ← stakeholder",
+    "p": "/ˈsteɪkhəʊldə(r)/",
+    "t": "n.",
+    "z": "利益相关者",
+    "e": "interested party",
+    "m": "2011 Text 3 · 2019 Text 1 · （2 次）"
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "adverse",
+    "p": "/ˈædvɜːs/",
+    "t": "adj.",
+    "z": "不利的；有害的",
+    "e": "negative; harmful; unfavourable",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "obstacles ← obstacle",
+    "p": "/ˈɒbstəkl/",
+    "t": "n.",
+    "z": "障碍（obstacle to doing）",
+    "e": "barrier; hindrance; obstruction",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "prevalence",
+    "p": "/ˈprevələns/",
+    "t": "n.",
+    "z": "普遍；盛行",
+    "e": "commonness; pervasiveness",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "decisiveness",
+    "p": "/dɪˈsaɪsɪvnəs/",
+    "t": "n.",
+    "z": "果断；决断力",
+    "e": "resolution; firmness",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 1",
+    "w": "frustration",
+    "p": "/frʌˈstreɪʃn/",
+    "t": "n.",
+    "z": "挫败；沮丧；受阻",
+    "e": "disappointment; thwarting",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "buried ← bury",
+    "p": "/ˈberi/",
+    "t": "v.",
+    "z": "埋藏；隐藏（buried deep in）",
+    "e": "hide; conceal",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "calculating ← calculate",
+    "p": "/ˈkælkjuleɪt/",
+    "t": "v.",
+    "z": "计算",
+    "e": "compute; work out",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "subsequent",
+    "p": "/ˈsʌbsɪkwənt/",
+    "t": "adj.",
+    "z": "随后的；后续的",
+    "e": "following; later",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "satisfies ← satisfy",
+    "p": "/ˈsætɪsfaɪ/",
+    "t": "v.",
+    "z": "满足；符合",
+    "e": "meet; fulfil",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "expectations ← expectation",
+    "p": "/ˌekspekˈteɪʃn/",
+    "t": "n.",
+    "z": "期望；预期",
+    "e": "hope; anticipation",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "counterbalance",
+    "p": "/ˌkaʊntəˈbæləns/",
+    "t": "v.",
+    "z": "抵消；抗衡",
+    "e": "offset; balance; neutralize",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "complement",
+    "p": "/ˈkɒmplɪment/",
+    "t": "v.",
+    "z": "补充；使完善（complement each other）",
+    "e": "supplement; go well with",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "identical",
+    "p": "/aɪˈdentɪkl/",
+    "t": "adj.",
+    "z": "完全相同的（be identical with/to）",
+    "e": "the same; alike",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 2",
+    "w": "contradictory",
+    "p": "/ˌkɒntrəˈdɪktəri/",
+    "t": "adj.",
+    "z": "相互矛盾的",
+    "e": "conflicting; inconsistent",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "speculative",
+    "p": "/ˈspekjələtɪv/",
+    "t": "adj.",
+    "z": "推测性的（speculative fiction 推想小说）",
+    "e": "based on guessing; hypothetical",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "foreshadow",
+    "p": "/fɔːˈʃædəʊ/",
+    "t": "v.",
+    "z": "预示；预兆",
+    "e": "predict; signal; herald",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "fascinated ← fascinate",
+    "p": "/ˈfæsɪneɪt/",
+    "t": "adj.",
+    "z": "着迷的（be fascinated by）",
+    "e": "captivated; enthralled",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "reproduced ← reproduce",
+    "p": "/ˌriːprəˈdjuːs/",
+    "t": "v.",
+    "z": "复制；再现",
+    "e": "copy; replicate; recreate",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "neuroscientist",
+    "p": "/ˈnjʊərəʊsaɪəntɪst/",
+    "t": "n.",
+    "z": "神经科学家",
+    "e": "scientist studying the nervous system",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "consciousness",
+    "p": "/ˈkɒnʃəsnəs/",
+    "t": "n.",
+    "z": "意识；知觉",
+    "e": "awareness",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "split-second",
+    "p": "/ˌsplɪt ˈsekənd/",
+    "t": "adj.",
+    "z": "瞬间的；极短时间的",
+    "e": "instant; very quick",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "combination",
+    "p": "/ˌkɒmbɪˈneɪʃn/",
+    "t": "n.",
+    "z": "结合；组合",
+    "e": "mixture; blend",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "instant",
+    "p": "/ˈɪnstənt/",
+    "t": "adj.",
+    "z": "立即的；瞬间的",
+    "e": "immediate",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "reflexes ← reflex",
+    "p": "/ˈriːfleks/",
+    "t": "n.",
+    "z": "反射；本能反应",
+    "e": "automatic reaction",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "ears ← ear",
+    "p": "/ɪə(r)/",
+    "t": "n.",
+    "z": "耳朵",
+    "e": "organ of hearing",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "sophisticated",
+    "p": "/səˈfɪstɪkeɪtɪd/",
+    "t": "adj.",
+    "z": "复杂精密的；先进的",
+    "e": "advanced; complex",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "pledged ← pledge",
+    "p": "/pledʒ/",
+    "t": "v.",
+    "z": "承诺；保证",
+    "e": "promise; vow; commit",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "weapons ← weapon",
+    "p": "/ˈwepən/",
+    "t": "n.",
+    "z": "武器",
+    "e": "arms",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "surveillance",
+    "p": "/sɜːˈveɪləns/",
+    "t": "n.",
+    "z": "监视；监控",
+    "e": "monitoring; observation",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "vague",
+    "p": "/veɪɡ/",
+    "t": "adj.",
+    "z": "模糊的；含糊的",
+    "e": "unclear; imprecise",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "represents ← represent",
+    "p": "/ˌreprɪˈzent/",
+    "t": "v.",
+    "z": "代表；构成；意味着",
+    "e": "stand for; constitute",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "fascinates ← fascinate",
+    "p": "/ˈfæsɪneɪt/",
+    "t": "v.",
+    "z": "使着迷；强烈吸引",
+    "e": "captivate; enthral",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "sparked ← spark",
+    "p": "/spɑːk/",
+    "t": "v.",
+    "z": "引发；激起",
+    "e": "trigger; prompt; cause",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "capacity",
+    "p": "/kəˈpæsəti/",
+    "t": "n.",
+    "z": "能力；容量",
+    "e": "ability; capability",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "curiosity",
+    "p": "/ˌkjʊəriˈɒsəti/",
+    "t": "n.",
+    "z": "好奇心；求知欲",
+    "e": "interest; inquisitiveness",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "affirmation",
+    "p": "/ˌæfəˈmeɪʃn/",
+    "t": "n.",
+    "z": "肯定；认可",
+    "e": "approval; endorsement",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 3",
+    "w": "predicting ← predict",
+    "p": "/prɪˈdɪkt/",
+    "t": "v.",
+    "z": "预测；预言",
+    "e": "forecast; foretell",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "overruled ← overrule",
+    "p": "/ˌəʊvəˈruːl/",
+    "t": "v.",
+    "z": "推翻；撤销（判决、决定）",
+    "e": "overturn; reverse",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "shipping ← ship",
+    "p": "/ʃɪp/",
+    "t": "v.",
+    "z": "运送；装运",
+    "e": "send; transport; deliver",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "warehouse",
+    "p": "/ˈweəhaʊs/",
+    "t": "n.",
+    "z": "仓库",
+    "e": "storehouse; depot",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "charged ← charge",
+    "p": "/tʃɑːdʒ/",
+    "t": "v.",
+    "z": "收取（费用、税）（charge sb sth）",
+    "e": "ask payment; bill",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "ruling",
+    "p": "/ˈruːlɪŋ/",
+    "t": "n.",
+    "z": "裁决；裁定",
+    "e": "decision; judgment; verdict",
+    "m": "2019 Text 4 · 2021 Text 4 · 2024 Text 4 · （3 次）"
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "addresses ← address",
+    "p": "/əˈdres/",
+    "t": "n.",
+    "z": "地址",
+    "e": "location; place",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "headaches ← headache",
+    "p": "/ˈhedeɪk/",
+    "t": "n.",
+    "z": "头痛；（喻）麻烦事",
+    "e": "problem; nuisance; trouble",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "complying with ← comply with",
+    "p": "/kəmˈplaɪ wɪð/",
+    "t": "phr v.",
+    "z": "遵守；依从",
+    "e": "obey; follow; observe",
+    "m": "2010 Text 2 · 2019 Text 4 · （2 次）"
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "council",
+    "p": "/ˈkaʊnsl/",
+    "t": "n.",
+    "z": "委员会；理事会；议会",
+    "e": "committee; board",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "advocacy",
+    "p": "/ˈædvəkəsi/",
+    "t": "n.",
+    "z": "倡导；支持（advocacy group 倡导组织）",
+    "e": "support; promotion",
+    "m": ""
+  },
+  {
+    "g": "2019 Text 4",
+    "w": "presence",
+    "p": "/ˈprezns/",
+    "t": "n.",
+    "z": "存在；在场（physical presence 实体存在）",
+    "e": "existence; attendance",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "awarded ← award",
+    "p": "/əˈwɔːd/",
+    "t": "v.",
+    "z": "授予；颁发",
+    "e": "give; grant; present",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "avalanche",
+    "p": "/ˈævəlɑːnʃ/",
+    "t": "n.",
+    "z": "雪崩；（喻）大量涌来（an avalanche of）",
+    "e": "flood; deluge",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "booby prize",
+    "p": "/ˈbuːbi praɪz/",
+    "t": "n.",
+    "z": "（给末名的）安慰奖",
+    "e": "joke prize for the loser",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "prestigious",
+    "p": "/preˈstɪdʒəs/",
+    "t": "adj.",
+    "z": "有声望的；有威望的",
+    "e": "respected; distinguished",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "bagged ← bag",
+    "p": "/bæɡ/",
+    "t": "v.",
+    "z": "（非正式）赢得；获得",
+    "e": "win; obtain; get",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "desperation",
+    "p": "/ˌdespəˈreɪʃn/",
+    "t": "n.",
+    "z": "绝望；（因绝望）极度渴望",
+    "e": "despair; hopelessness",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "reinvent",
+    "p": "/ˌriːɪnˈvent/",
+    "t": "v.",
+    "z": "彻底改造；重塑（reinvent itself）",
+    "e": "remake; transform",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "prominence",
+    "p": "/ˈprɒmɪnəns/",
+    "t": "n.",
+    "z": "显著；突出；知名",
+    "e": "fame; importance",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "aspirations ← aspiration",
+    "p": "/ˌæspəˈreɪʃn/",
+    "t": "n.",
+    "z": "抱负；志向；愿望",
+    "e": "ambition; desire; hope",
+    "m": "2011 Text 2 · 2020 Text 1 · （2 次）"
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "bolder ← bold",
+    "p": "/bəʊld/",
+    "t": "adj.",
+    "z": "大胆的；自信的",
+    "e": "brave; daring; confident",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "authorities ← authority",
+    "p": "/ɔːˈθɒrəti/",
+    "t": "n.",
+    "z": "当局；官方机构",
+    "e": "government; officials",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "honouring ← honour",
+    "p": "/ˈɒnə(r)/",
+    "t": "v.",
+    "z": "颂扬；给予荣誉",
+    "e": "celebrate; praise; pay tribute to",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "facilities ← facility",
+    "p": "/fəˈsɪləti/",
+    "t": "n.",
+    "z": "设施；设备",
+    "e": "amenities; equipment",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "consolidate",
+    "p": "/kənˈsɒlɪdeɪt/",
+    "t": "v.",
+    "z": "巩固；加强；合并",
+    "e": "strengthen; reinforce",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "compromise",
+    "p": "/ˈkɒmprəmaɪz/",
+    "t": "n./v.",
+    "z": "① 妥协；折中方案 ② v. 损害",
+    "e": "① middle way; concession ② weaken",
+    "m": "2010 Text 4 · 2020 Text 1 · （2 次）"
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "inaccessible",
+    "p": "/ˌɪnækˈsesəbl/",
+    "t": "adj.",
+    "z": "难以到达的；难以获得的",
+    "e": "unreachable; unattainable",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "endeavours ← endeavour",
+    "p": "/ɪnˈdevə(r)/",
+    "t": "v./n.",
+    "z": "努力；尽力（endeavour to do）",
+    "e": "try; strive; attempt",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 1",
+    "w": "commits ← commit",
+    "p": "/kəmˈmɪt/",
+    "t": "v.",
+    "z": "① 致力于；承诺（commit to） ② 犯（罪）",
+    "e": "① pledge; dedicate ② carry out",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "supply",
+    "p": "/səˈplaɪ/",
+    "t": "v.",
+    "z": "提供；供应",
+    "e": "provide; give; furnish",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "routinely",
+    "p": "/ruːˈtiːnli/",
+    "t": "adv.",
+    "z": "常规地；经常",
+    "e": "regularly; usually",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "rest",
+    "p": "/rest/",
+    "t": "n.",
+    "z": "其余部分（the rest of）",
+    "e": "remainder; others",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "figures ← figure",
+    "p": "/ˈfɪɡə(r)/",
+    "t": "n.",
+    "z": "数字；数据；人物",
+    "e": "numbers; statistics",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "drastic",
+    "p": "/ˈdræstɪk/",
+    "t": "adj.",
+    "z": "激烈的；极端的",
+    "e": "extreme; severe; radical",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "reaction",
+    "p": "/riˈækʃn/",
+    "t": "n.",
+    "z": "反应；回应",
+    "e": "response; reply",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "paywalled ← paywall",
+    "p": "/ˈpeɪwɔːld/",
+    "t": "adj.",
+    "z": "需付费阅读的",
+    "e": "behind a paywall; subscription-only",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "ecosystem",
+    "p": "/ˈiːkəʊsɪstəm/",
+    "t": "n.",
+    "z": "生态系统；（喻）体系",
+    "e": "system; network",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "bodies ← body",
+    "p": "/ˈbɒdi/",
+    "t": "n.",
+    "z": "机构；团体（funding body 资助机构）",
+    "e": "organization; institution",
+    "m": "2020 Text 2 · 2025 Text 1 · 2026 Text 2 · （3 次）"
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "terms ← term",
+    "p": "/tɜːm/",
+    "t": "n.",
+    "z": "条款；条件（under the terms of）",
+    "e": "conditions; provisions",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "release",
+    "p": "/rɪˈliːs/",
+    "t": "n./v.",
+    "z": "发布；公开（general release）",
+    "e": "publication; issue",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "status",
+    "p": "/ˈsteɪtəs/",
+    "t": "n.",
+    "z": "地位；声望",
+    "e": "standing; prestige; rank",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "huge",
+    "p": "/hjuːdʒ/",
+    "t": "adj.",
+    "z": "巨大的",
+    "e": "enormous; vast",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "thrived ← thrive",
+    "p": "/θraɪv/",
+    "t": "v.",
+    "z": "兴旺；繁荣（thrive on）",
+    "e": "flourish; prosper",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "reviewed ← review",
+    "p": "/rɪˈvjuː/",
+    "t": "v.",
+    "z": "审视；评估；评论",
+    "e": "examine; assess",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "financed ← finance",
+    "p": "/ˈfaɪnæns/",
+    "t": "v.",
+    "z": "资助；为……提供资金",
+    "e": "fund; pay for; sponsor",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "relieved",
+    "p": "/rɪˈliːvd/",
+    "t": "adj.",
+    "z": "宽慰的；松了口气的",
+    "e": "reassured; comforted",
+    "m": "2020 Text 2 · 2024 Text 4 · （2 次）"
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "burdens ← burden",
+    "p": "/ˈbɜːdn/",
+    "t": "n.",
+    "z": "负担；重担",
+    "e": "load; pressure; strain",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 2",
+    "w": "triumphs ← triumph",
+    "p": "/ˈtraɪʌmf/",
+    "t": "v.",
+    "z": "战胜；胜过（triumph over）",
+    "e": "prevail; win; defeat",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "progressives ← progressive",
+    "p": "/prəˈɡresɪv/",
+    "t": "n.",
+    "z": "进步人士；改革派",
+    "e": "reformist; liberal",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "diversity",
+    "p": "/daɪˈvɜːsəti/",
+    "t": "n.",
+    "z": "多样性；多元化",
+    "e": "variety; range",
+    "m": "2020 Text 3 · 2022 Text 2 · 2023 Text 3 · （3 次）"
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "mandates ← mandate",
+    "p": "/ˈmændeɪt/",
+    "t": "n.",
+    "z": "强制规定；授权",
+    "e": "order; requirement",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "commissions ← commission",
+    "p": "/kəˈmɪʃn/",
+    "t": "n.",
+    "z": "① 委员会 ② 佣金",
+    "e": "① committee; board ② fee",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "seats ← seat",
+    "p": "/siːt/",
+    "t": "n.",
+    "z": "席位；座位（board seats）",
+    "e": "place; position",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "gender",
+    "p": "/ˈdʒendə(r)/",
+    "t": "n.",
+    "z": "性别（gender quotas 性别配额）",
+    "e": "sex",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "prior",
+    "p": "/ˈpraɪə(r)/",
+    "t": "adj.",
+    "z": "先前的；以前的",
+    "e": "previous; earlier; former",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "discrimination",
+    "p": "/dɪˌskrɪmɪˈneɪʃn/",
+    "t": "n.",
+    "z": "歧视",
+    "e": "bias; prejudice; unfair treatment",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "violates ← violate",
+    "p": "/ˈvaɪəleɪt/",
+    "t": "v.",
+    "z": "违反；侵犯",
+    "e": "break; breach; infringe",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "participation",
+    "p": "/pɑːˌtɪsɪˈpeɪʃn/",
+    "t": "n.",
+    "z": "参与；参加",
+    "e": "involvement",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "corporate",
+    "p": "/ˈkɔːpərət/",
+    "t": "adj.",
+    "z": "公司的；企业的",
+    "e": "of a company; business",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "exactly",
+    "p": "/ɪɡˈzæktli/",
+    "t": "adv.",
+    "z": "正是；准确地",
+    "e": "precisely; just",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "scoop up",
+    "p": "/ˌskuːp ˈʌp/",
+    "t": "phr v.",
+    "z": "舀起；（迅速大量）抢占",
+    "e": "grab; snap up",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "sponsored ← sponsor",
+    "p": "/ˈspɒnsə(r)/",
+    "t": "v.",
+    "z": "① 提出（议案） ② 赞助",
+    "e": "① propose ② fund",
+    "m": "2020 Text 3 · 2023 Text 1 · （2 次）"
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "pose",
+    "p": "/pəʊz/",
+    "t": "v.",
+    "z": "造成；构成（pose a threat）；提出",
+    "e": "present; cause; raise",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "irritated ← irritate",
+    "p": "/ˈɪrɪteɪt/",
+    "t": "v.",
+    "z": "使恼火",
+    "e": "annoy; anger; vex",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "pressure",
+    "p": "/ˈpreʃə(r)/",
+    "t": "n.",
+    "z": "压力",
+    "e": "stress; strain",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "objection",
+    "p": "/əbˈdʒekʃn/",
+    "t": "n.",
+    "z": "反对；异议",
+    "e": "opposition; protest",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "feasibility",
+    "p": "/ˌfiːzəˈbɪləti/",
+    "t": "n.",
+    "z": "可行性",
+    "e": "practicability; viability",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 3",
+    "w": "prime",
+    "p": "/praɪm/",
+    "t": "adj.",
+    "z": "首要的；主要的（prime concern）",
+    "e": "main; chief; primary",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "multinationals ← multinational",
+    "p": "/ˌmʌltiˈnæʃnəl/",
+    "t": "n.",
+    "z": "跨国公司",
+    "e": "international company",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "unilateral",
+    "p": "/ˌjuːnɪˈlætrəl/",
+    "t": "adj.",
+    "z": "单方面的；单边的",
+    "e": "one-sided; independent",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "instead",
+    "p": "/ɪnˈsted/",
+    "t": "adv.",
+    "z": "反而；而是",
+    "e": "rather; alternatively",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "alphabet soup",
+    "p": "/ˈælfəbet suːp/",
+    "t": "n.",
+    "z": "（喻）一堆令人困惑的缩略词",
+    "e": "confusing mass of abbreviations",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "countermeasures ← countermeasure",
+    "p": "/ˈkaʊntəmeʒə(r)/",
+    "t": "n.",
+    "z": "反制措施；对策",
+    "e": "response; retaliation",
+    "m": "2020 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "resisted ← resist",
+    "p": "/rɪˈzɪst/",
+    "t": "v.",
+    "z": "抵制；反对",
+    "e": "oppose; fight against",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "readjusted ← readjust",
+    "p": "/ˌriːəˈdʒʌst/",
+    "t": "v.",
+    "z": "重新调整",
+    "e": "adjust again; modify",
+    "m": ""
+  },
+  {
+    "g": "2020 Text 4",
+    "w": "immediately",
+    "p": "/ɪˈmiːdiətli/",
+    "t": "adv.",
+    "z": "立即；马上",
+    "e": "at once; instantly",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "grimly",
+    "p": "/ˈɡrɪmli/",
+    "t": "adv.",
+    "z": "令人沮丧地；严峻地",
+    "e": "depressingly; bleakly",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "ritual",
+    "p": "/ˈrɪtʃuəl/",
+    "t": "n.",
+    "z": "惯例；仪式",
+    "e": "routine; custom; ceremony",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "borne ← bear",
+    "p": "/beə(r)/",
+    "t": "v.",
+    "z": "承担；负担（cost be borne by）",
+    "e": "pay for; carry; shoulder",
+    "m": "2021 Text 1 · 2026 Text 4 · （2 次）"
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "trumpeting ← trumpet",
+    "p": "/ˈtrʌmpɪt/",
+    "t": "v.",
+    "z": "大肆宣扬；鼓吹",
+    "e": "proclaim; boast about",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "substantial",
+    "p": "/səbˈstænʃl/",
+    "t": "adj.",
+    "z": "大量的；可观的",
+    "e": "considerable; large",
+    "m": "2019 Text 1 · 2021 Text 1 · （2 次）"
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "strikes ← strike",
+    "p": "/straɪk/",
+    "t": "n.",
+    "z": "罢工",
+    "e": "walkout; industrial action",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "cramped",
+    "p": "/kræmpt/",
+    "t": "adj.",
+    "z": "狭窄的；拥挤的",
+    "e": "crowded; confined",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "punctuated ← punctuate",
+    "p": "/ˈpʌŋktʃueɪt/",
+    "t": "v.",
+    "z": "不时打断",
+    "e": "interrupt; break up",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "incompetently",
+    "p": "/ɪnˈkɒmpɪtəntli/",
+    "t": "adv.",
+    "z": "无能地；不称职地",
+    "e": "badly; inefficiently",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "with a vengeance",
+    "p": "/wɪð ə ˈvendʒəns/",
+    "t": "idiom",
+    "z": "猛烈地；变本加厉地（vengeance 报复）",
+    "e": "to a greater degree than expected",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "compensation",
+    "p": "/ˌkɒmpenˈseɪʃn/",
+    "t": "n.",
+    "z": "赔偿；补偿",
+    "e": "recompense; damages",
+    "m": "2019 Text 1 · 2021 Text 1 · （2 次）"
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "adequate",
+    "p": "/ˈædɪkwət/",
+    "t": "adj.",
+    "z": "足够的；合格的",
+    "e": "sufficient; satisfactory",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "nationalisation",
+    "p": "/ˌnæʃnəlaɪˈzeɪʃn/",
+    "t": "n.",
+    "z": "国有化",
+    "e": "state ownership",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 1",
+    "w": "sustainable",
+    "p": "/səˈsteɪnəbl/",
+    "t": "adj.",
+    "z": "可持续的",
+    "e": "maintainable; lasting",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "deforestation",
+    "p": "/ˌdiːˌfɒrɪˈsteɪʃn/",
+    "t": "n.",
+    "z": "森林砍伐；毁林",
+    "e": "clearing of forests",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "antipoverty",
+    "p": "/ˌæntiˈpɒvəti/",
+    "t": "adj.",
+    "z": "扶贫的；反贫困的",
+    "e": "aimed at reducing poverty",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "phasing in ← phase in",
+    "p": "/ˌfeɪz ˈɪn/",
+    "t": "phr v.",
+    "z": "逐步引入（↔ phase out 逐步淘汰）",
+    "e": "introduce gradually",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "alleviation",
+    "p": "/əˌliːviˈeɪʃn/",
+    "t": "n.",
+    "z": "减轻；缓解（poverty alleviation 减贫）",
+    "e": "relief; reduction",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "makeshift",
+    "p": "/ˈmeɪkʃɪft/",
+    "t": "adj.",
+    "z": "临时凑合的；权宜的",
+    "e": "temporary; improvised",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "inclement",
+    "p": "/ɪnˈklemənt/",
+    "t": "adj.",
+    "z": "（天气）恶劣的",
+    "e": "harsh; stormy",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "harvests ← harvest",
+    "p": "/ˈhɑːvɪst/",
+    "t": "n.",
+    "z": "收成；收获",
+    "e": "crop; yield",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "commonalities ← commonality",
+    "p": "/ˌkɒməˈnæləti/",
+    "t": "n.",
+    "z": "共同点；共性",
+    "e": "similarity; shared feature",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "transferability",
+    "p": "/ˌtrænsfɜːrəˈbɪləti/",
+    "t": "n.",
+    "z": "可推广性；可迁移性",
+    "e": "applicability elsewhere",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "poverty",
+    "p": "/ˈpɒvəti/",
+    "t": "n.",
+    "z": "贫困",
+    "e": "poorness; need; hardship",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "emissions ← emission",
+    "p": "/iˈmɪʃn/",
+    "t": "n.",
+    "z": "排放；排放物",
+    "e": "discharge; release",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "facilitate",
+    "p": "/fəˈsɪlɪteɪt/",
+    "t": "v.",
+    "z": "促进；使便利",
+    "e": "assist; promote; enable",
+    "m": "2021 Text 2 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "degradation",
+    "p": "/ˌdeɡrəˈdeɪʃn/",
+    "t": "n.",
+    "z": "退化；恶化（environmental degradation）",
+    "e": "deterioration; decline",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "acceptance",
+    "p": "/əkˈseptəns/",
+    "t": "n.",
+    "z": "接受；认可",
+    "e": "approval; recognition",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 2",
+    "w": "debates ← debate",
+    "p": "/dɪˈbeɪt/",
+    "t": "n.",
+    "z": "争论；辩论（debate over）",
+    "e": "argument; discussion",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "re-evaluate",
+    "p": "/ˌriː ɪˈvæljueɪt/",
+    "t": "v.",
+    "z": "重新评价；重新审视",
+    "e": "reassess; reconsider",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "preoccupied",
+    "p": "/priˈɒkjupaɪd/",
+    "t": "adj.",
+    "z": "全神贯注的；心事重重的（be preoccupied with）",
+    "e": "absorbed; engrossed",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "shatter",
+    "p": "/ˈʃætə(r)/",
+    "t": "v.",
+    "z": "打破；粉碎（观念、形象）",
+    "e": "destroy; smash; wreck",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "prudery",
+    "p": "/ˈpruːdəri/",
+    "t": "n.",
+    "z": "假正经；过分拘谨",
+    "e": "prudishness; primness",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "catalogue",
+    "p": "/ˈkætəlɒɡ/",
+    "t": "n.",
+    "z": "目录；一系列（藏品）",
+    "e": "list; collection; series",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "portraiture",
+    "p": "/ˈpɔːtrətʃə(r)/",
+    "t": "n.",
+    "z": "肖像艺术（画、摄影）",
+    "e": "art of making portraits",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "miserably",
+    "p": "/ˈmɪzrəbli/",
+    "t": "adv.",
+    "z": "痛苦地；惨淡地",
+    "e": "unhappily; wretchedly",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "painted",
+    "p": "/ˈpeɪntɪd/",
+    "t": "adj.",
+    "z": "彩绘的；上了漆的",
+    "e": "coloured; decorated",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "backdrops ← backdrop",
+    "p": "/ˈbækdrɒp/",
+    "t": "n.",
+    "z": "背景幕布；背景",
+    "e": "background; scenery",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "notoriously",
+    "p": "/nəʊˈtɔːriəsli/",
+    "t": "adv.",
+    "z": "出了名地（多含贬义）",
+    "e": "infamously; famously (for something bad)",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "daguerreotype",
+    "p": "/dəˈɡerətaɪp/",
+    "t": "n.",
+    "z": "达盖尔银版照相（法）",
+    "e": "early type of photograph",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "shifted ← shift",
+    "p": "/ʃɪft/",
+    "t": "v.",
+    "z": "移动；转变",
+    "e": "move; change",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "adjusted ← adjust",
+    "p": "/əˈdʒʌst/",
+    "t": "v.",
+    "z": "调整；调节",
+    "e": "alter; modify; adapt",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "limbs ← limb",
+    "p": "/lɪm/",
+    "t": "n.",
+    "z": "肢；臂；腿",
+    "e": "arm or leg",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "grin",
+    "p": "/ɡrɪn/",
+    "t": "n.",
+    "z": "露齿笑；咧嘴笑",
+    "e": "broad smile",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "duties ← duty",
+    "p": "/ˈdjuːti/",
+    "t": "n.",
+    "z": "职责；任务；功能",
+    "e": "responsibility; task; function",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "blank",
+    "p": "/blæŋk/",
+    "t": "adj.",
+    "z": "茫然的；无表情的；空白的（blank stare）",
+    "e": "expressionless; empty",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "Brownie",
+    "p": "/ˈbraʊni/",
+    "t": "n.",
+    "z": "（柯达）布朗尼便携相机",
+    "e": "Kodak Box Brownie camera",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "instantaneous",
+    "p": "/ˌɪnstənˈteɪniəs/",
+    "t": "adj.",
+    "z": "瞬间的；即时的",
+    "e": "instant; immediate",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "spontaneous",
+    "p": "/spɒnˈteɪniəs/",
+    "t": "adj.",
+    "z": "自发的；自然的",
+    "e": "natural; unplanned",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "hesitated ← hesitate",
+    "p": "/ˈhezɪteɪt/",
+    "t": "v.",
+    "z": "犹豫；迟疑",
+    "e": "pause; waver",
+    "m": "2021 Text 3 · 2023 Text 3 · （2 次）"
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "dignity",
+    "p": "/ˈdɪɡnəti/",
+    "t": "n.",
+    "z": "尊严；庄重",
+    "e": "self-respect; seriousness",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "lips ← lip",
+    "p": "/lɪp/",
+    "t": "n.",
+    "z": "嘴唇",
+    "e": "edge of the mouth",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "conceal",
+    "p": "/kənˈsiːl/",
+    "t": "v.",
+    "z": "隐藏；遮住；隐瞒",
+    "e": "hide; cover; disguise",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "alluding ← allude",
+    "p": "/əˈluːd/",
+    "t": "v.",
+    "z": "暗指；间接提到（allude to）",
+    "e": "refer indirectly; hint",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "tramps ← tramp",
+    "p": "/træmp/",
+    "t": "n.",
+    "z": "流浪汉",
+    "e": "vagrant; homeless person",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "performers ← performer",
+    "p": "/pəˈfɔːmə(r)/",
+    "t": "n.",
+    "z": "表演者",
+    "e": "actor; entertainer",
+    "m": "2011 Text 2 · 2021 Text 3 · （2 次）"
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "bred ← breed",
+    "p": "/bred/",
+    "t": "adj.",
+    "z": "（properly / well-bred）有教养的",
+    "e": "well brought up; well-mannered",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "damning",
+    "p": "/ˈdæmɪŋ/",
+    "t": "adj.",
+    "z": "强烈批评的；有损名声的",
+    "e": "critical; condemning",
+    "m": "2018 Text 3 · 2021 Text 3 · （2 次）"
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "silly",
+    "p": "/ˈsɪli/",
+    "t": "adj.",
+    "z": "愚蠢的；傻的",
+    "e": "foolish; stupid",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "inherent",
+    "p": "/ɪnˈhɪərənt/",
+    "t": "adj.",
+    "z": "固有的；内在的",
+    "e": "intrinsic; innate; built-in",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "distrust",
+    "p": "/dɪsˈtrʌst/",
+    "t": "n./v.",
+    "z": "不信任；怀疑",
+    "e": "mistrust; suspicion",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "misguided",
+    "p": "/ˌmɪsˈɡaɪdɪd/",
+    "t": "adj.",
+    "z": "被误导的；错误的",
+    "e": "mistaken; ill-judged",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "thought-provoking",
+    "p": "/ˈθɔːt prəvəʊkɪŋ/",
+    "t": "adj.",
+    "z": "发人深省的",
+    "e": "stimulating; provocative",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 3",
+    "w": "stern",
+    "p": "/stɜːn/",
+    "t": "adj.",
+    "z": "严肃的；严厉的",
+    "e": "serious; severe; strict",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "incentive",
+    "p": "/ɪnˈsentɪv/",
+    "t": "n.",
+    "z": "激励；动机",
+    "e": "motivation; stimulus; encouragement",
+    "m": "2021 Text 4 · 2026 Text 2 · （2 次）"
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "affiliated",
+    "p": "/əˈfɪlieɪtɪd/",
+    "t": "adj.",
+    "z": "附属的；有关联的",
+    "e": "associated; connected",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "innovation",
+    "p": "/ˌɪnəˈveɪʃn/",
+    "t": "n.",
+    "z": "创新；革新",
+    "e": "new idea; invention",
+    "m": "2021 Text 4 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "lifeblood",
+    "p": "/ˈlaɪfblʌd/",
+    "t": "n.",
+    "z": "命脉；生命线",
+    "e": "most important part; essence",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "broadband",
+    "p": "/ˈbrɔːdbænd/",
+    "t": "n./adj.",
+    "z": "宽带（的）",
+    "e": "high-speed internet connection",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "prolonged ← prolong",
+    "p": "/prəˈlɒŋ/",
+    "t": "v.",
+    "z": "延长；拖延",
+    "e": "extend; lengthen",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "penned ← pen",
+    "p": "/pen/",
+    "t": "v.",
+    "z": "撰写；起草",
+    "e": "write; compose",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "rejected ← reject",
+    "p": "/rɪˈdʒekt/",
+    "t": "v.",
+    "z": "拒绝接受；驳回",
+    "e": "refuse; dismiss; turn down",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "conglomerate",
+    "p": "/kənˈɡlɒmərət/",
+    "t": "n.",
+    "z": "企业集团；联合大企业",
+    "e": "large group of companies",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "investigations ← investigation",
+    "p": "/ɪnˌvestɪˈɡeɪʃn/",
+    "t": "n.",
+    "z": "调查；审查",
+    "e": "inquiry; examination",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "unanimously",
+    "p": "/juˈnænɪməsli/",
+    "t": "adv.",
+    "z": "一致地；全体同意地",
+    "e": "with everyone agreeing",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "upheld ← uphold",
+    "p": "/ʌpˈhəʊld/",
+    "t": "v.",
+    "z": "维持（裁决）；支持",
+    "e": "confirm; support; maintain",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "deregulating ← deregulate",
+    "p": "/ˌdiːˈreɡjuleɪt/",
+    "t": "v.",
+    "z": "放松管制；解除管制",
+    "e": "remove regulations from",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "concurring ← concur",
+    "p": "/kənˈkɜː(r)/",
+    "t": "v.",
+    "z": "同意；赞同（concurring opinion 协同意见）",
+    "e": "agree; accord",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "unhinged from ← unhinge",
+    "p": "/ʌnˈhɪndʒ/",
+    "t": "v.",
+    "z": "（be unhinged from）脱离（实际）",
+    "e": "detached; disconnected",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "realities ← reality",
+    "p": "/riˈæləti/",
+    "t": "n.",
+    "z": "现实；实际情况",
+    "e": "fact; actual situation",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "intervene",
+    "p": "/ˌɪntəˈviːn/",
+    "t": "v.",
+    "z": "干预；介入",
+    "e": "step in; interfere",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "trapping ← trap",
+    "p": "/træp/",
+    "t": "v.",
+    "z": "使陷入困境；困住",
+    "e": "catch; confine",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "anachronism",
+    "p": "/əˈnækrənɪzəm/",
+    "t": "n.",
+    "z": "不合时宜的事物；时代错置",
+    "e": "something out of date",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "abdication",
+    "p": "/ˌæbdɪˈkeɪʃn/",
+    "t": "n.",
+    "z": "（责任的）放弃；退位",
+    "e": "giving up; renunciation",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "intensify",
+    "p": "/ɪnˈtensɪfaɪ/",
+    "t": "v.",
+    "z": "加剧；增强",
+    "e": "increase; heighten; escalate",
+    "m": "2011 Text 4 · 2021 Text 4 · （2 次）"
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "rivals ← rival",
+    "p": "/ˈraɪvl/",
+    "t": "n.",
+    "z": "竞争对手",
+    "e": "competitor; opponent",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "trivialities ← triviality",
+    "p": "/ˌtrɪviˈæləti/",
+    "t": "n.",
+    "z": "琐事；细枝末节",
+    "e": "trivia; minor detail",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "rulings ← ruling",
+    "p": "/ˈruːlɪŋ/",
+    "t": "n.",
+    "z": "裁定；判决",
+    "e": "decision; judgment",
+    "m": "2019 Text 4 · 2021 Text 4 · 2024 Text 4 · （3 次）"
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "supervision",
+    "p": "/ˌsuːpəˈvɪʒn/",
+    "t": "n.",
+    "z": "监督；监管",
+    "e": "oversight; control; regulation",
+    "m": ""
+  },
+  {
+    "g": "2021 Text 4",
+    "w": "diversify",
+    "p": "/daɪˈvɜːsɪfaɪ/",
+    "t": "v.",
+    "z": "使多样化",
+    "e": "vary; broaden; expand",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "durable",
+    "p": "/ˈdjʊərəbl/",
+    "t": "adj.",
+    "z": "耐用的；持久的",
+    "e": "long-lasting; tough",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "additives ← additive",
+    "p": "/ˈædətɪv/",
+    "t": "n.",
+    "z": "添加剂",
+    "e": "substance added",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "radios ← radio",
+    "p": "/ˈreɪdiəʊ/",
+    "t": "n.",
+    "z": "收音机",
+    "e": "receiver",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "sculptures ← sculpture",
+    "p": "/ˈskʌlptʃə(r)/",
+    "t": "n.",
+    "z": "雕塑（作品）",
+    "e": "statue; carving",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "celluloid",
+    "p": "/ˈseljulɔɪd/",
+    "t": "n.",
+    "z": "赛璐珞（早期塑料）",
+    "e": "early type of plastic",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "ingredients ← ingredient",
+    "p": "/ɪnˈɡriːdiənt/",
+    "t": "n.",
+    "z": "成分；原料",
+    "e": "component; element",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "chemist",
+    "p": "/ˈkemɪst/",
+    "t": "n.",
+    "z": "化学家；（英）药剂师",
+    "e": "scientist in chemistry",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "pumpkins ← pumpkin",
+    "p": "/ˈpʌmpkɪn/",
+    "t": "n.",
+    "z": "南瓜",
+    "e": "large orange vegetable",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "inherently",
+    "p": "/ɪnˈhɪərəntli/",
+    "t": "adv.",
+    "z": "本质上；固有地",
+    "e": "intrinsically; naturally",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "crumbling ← crumble",
+    "p": "/ˈkrʌmbl/",
+    "t": "v.",
+    "z": "碎裂；崩解",
+    "e": "break apart; disintegrate",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "chemicals ← chemical",
+    "p": "/ˈkemɪkl/",
+    "t": "n.",
+    "z": "化学物质",
+    "e": "chemical substance",
+    "m": "2013 Text 1 · 2022 Text 1 · （2 次）"
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "albeit",
+    "p": "/ˌɔːlˈbiːɪt/",
+    "t": "conj.",
+    "z": "尽管；虽然",
+    "e": "although; though",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "deteriorate",
+    "p": "/dɪˈtɪəriəreɪt/",
+    "t": "v.",
+    "z": "恶化；变质",
+    "e": "worsen; decline; decay",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "disintegrate",
+    "p": "/dɪsˈɪntɪɡreɪt/",
+    "t": "v.",
+    "z": "瓦解；崩解",
+    "e": "break up; fall apart",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "restoration",
+    "p": "/ˌrestəˈreɪʃn/",
+    "t": "n.",
+    "z": "修复；复原",
+    "e": "repair; renovation",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 1",
+    "w": "decay",
+    "p": "/dɪˈkeɪ/",
+    "t": "n./v.",
+    "z": "腐朽；腐烂；衰败",
+    "e": "rot; decompose; decline",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "Generation Z",
+    "p": "/ˌdʒenəˌreɪʃn ˈzed/",
+    "t": "n.",
+    "z": "Z 世代",
+    "e": "people born c. late 1990s–2010",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "millennials ← millennial",
+    "p": "/mɪˈleniəl/",
+    "t": "n./adj.",
+    "z": "千禧一代（的）",
+    "e": "people born c. 1980–mid 1990s",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "decent",
+    "p": "/ˈdiːsnt/",
+    "t": "adj.",
+    "z": "像样的；体面的；不错的",
+    "e": "satisfactory; respectable; good",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "mobility",
+    "p": "/məʊˈbɪləti/",
+    "t": "n.",
+    "z": "流动性（social mobility 社会流动）",
+    "e": "movement; ability to move",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "seeking ← seek",
+    "p": "/siːk/",
+    "t": "v.",
+    "z": "试图；寻求（seek to do）",
+    "e": "try; attempt; look for",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "predecessors ← predecessor",
+    "p": "/ˈpriːdɪsesə(r)/",
+    "t": "n.",
+    "z": "前辈；前任",
+    "e": "forerunner; antecedent",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "mindset",
+    "p": "/ˈmaɪndset/",
+    "t": "n.",
+    "z": "思维模式；心态",
+    "e": "attitude; way of thinking",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "hiring ← hire",
+    "p": "/ˈhaɪə(r)/",
+    "t": "v.",
+    "z": "雇用；聘用",
+    "e": "employ; recruit; take on",
+    "m": "2022 Text 2 · 2022 Text 4 · （2 次）"
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "committed",
+    "p": "/kəˈmɪtɪd/",
+    "t": "adj.",
+    "z": "尽心尽力的；忠诚投入的",
+    "e": "dedicated; devoted; loyal",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "scrapping ← scrap",
+    "p": "/skræp/",
+    "t": "v.",
+    "z": "废除；取消",
+    "e": "abolish; drop; get rid of",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "postgraduates ← postgraduate",
+    "p": "/ˌpəʊstˈɡrædʒuət/",
+    "t": "n.",
+    "z": "研究生",
+    "e": "graduate student",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "sense",
+    "p": "/sens/",
+    "t": "n.",
+    "z": "道理；意义（make sense 合理）",
+    "e": "reason; logic; meaning",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "estimated ← estimate",
+    "p": "/ˈestɪmeɪt/",
+    "t": "v.",
+    "z": "估计；估算（It is estimated that…）",
+    "e": "calculate roughly; reckon",
+    "m": "2022 Text 2 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "diversity",
+    "p": "/daɪˈvɜːsəti/",
+    "t": "n.",
+    "z": "多样性；多样化",
+    "e": "variety; range",
+    "m": "2020 Text 3 · 2022 Text 2 · 2023 Text 3 · （3 次）"
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "trajectory",
+    "p": "/trəˈdʒektəri/",
+    "t": "n.",
+    "z": "轨迹；发展轨迹（career trajectory）",
+    "e": "path; course; direction",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "tense",
+    "p": "/tens/",
+    "t": "n.",
+    "z": "（语法）时态（adj. 紧张的）",
+    "e": "verb form showing time",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "reassess",
+    "p": "/ˌriːəˈses/",
+    "t": "v.",
+    "z": "重新评估",
+    "e": "re-evaluate; reconsider",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "postpone",
+    "p": "/pəˈspəʊn/",
+    "t": "v.",
+    "z": "推迟；延期",
+    "e": "delay; put off; defer",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 2",
+    "w": "qualified",
+    "p": "/ˈkwɒlɪfaɪd/",
+    "t": "adj.",
+    "z": "合格的；有资格的",
+    "e": "trained; certified; competent",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "accompanying",
+    "p": "/əˈkʌmpəniɪŋ/",
+    "t": "adj.",
+    "z": "随附的；配套的",
+    "e": "attached; supplementary",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "poll",
+    "p": "/pəʊl/",
+    "t": "n.",
+    "z": "调查；民意测验",
+    "e": "survey; questionnaire",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "reworked ← rework",
+    "p": "/ˌriːˈwɜːk/",
+    "t": "v./n.",
+    "z": "改编；修改",
+    "e": "revise; adapt; rewrite",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "reimagined ← reimagine",
+    "p": "/ˌriːɪˈmædʒɪn/",
+    "t": "v.",
+    "z": "重新诠释；重新构想",
+    "e": "reinterpret; reinvent",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "prompt",
+    "p": "/prɒmpt/",
+    "t": "v.",
+    "z": "激发；促使",
+    "e": "provoke; cause; encourage",
+    "m": "2014 Text 1 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "deliberately",
+    "p": "/dɪˈlɪbərətli/",
+    "t": "adv.",
+    "z": "有意地；刻意地",
+    "e": "intentionally; on purpose",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "vice versa",
+    "p": "/ˌvaɪs ˈvɜːsə/",
+    "t": "adv.",
+    "z": "反之亦然",
+    "e": "the other way round",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "immersed ← immerse",
+    "p": "/ɪˈmɜːs/",
+    "t": "v.",
+    "z": "使沉浸（immerse oneself in）",
+    "e": "absorb; involve deeply",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "critique",
+    "p": "/krɪˈtiːk/",
+    "t": "n.",
+    "z": "批评；评析",
+    "e": "criticism; review; analysis",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "academic",
+    "p": "/ˌækəˈdemɪk/",
+    "t": "adj.",
+    "z": "学术的",
+    "e": "scholarly; educational",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "facilitating ← facilitate",
+    "p": "/fəˈsɪlɪteɪt/",
+    "t": "v.",
+    "z": "促进；使便利",
+    "e": "make easier; enable; promote",
+    "m": "2021 Text 2 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "innovations ← innovation",
+    "p": "/ˌɪnəˈveɪʃn/",
+    "t": "n.",
+    "z": "创新；新发明",
+    "e": "invention; new idea",
+    "m": "2021 Text 4 · 2022 Text 3 · （2 次）"
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "underestimated ← underestimate",
+    "p": "/ˌʌndərˈestɪmeɪt/",
+    "t": "v.",
+    "z": "低估",
+    "e": "underrate; undervalue",
+    "m": "2022 Text 3 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2022 Text 3",
+    "w": "interdisciplinary",
+    "p": "/ˌɪntəˈdɪsəplɪnəri/",
+    "t": "adj.",
+    "z": "跨学科的",
+    "e": "cross-disciplinary",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "firing ← fire",
+    "p": "/ˈfaɪə(r)/",
+    "t": "v.",
+    "z": "解雇；开除（熟词僻义）",
+    "e": "dismiss; sack",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "unjustified",
+    "p": "/ʌnˈdʒʌstɪfaɪd/",
+    "t": "adj.",
+    "z": "不正当的；无正当理由的",
+    "e": "unwarranted; unfair",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "premise",
+    "p": "/ˈpremɪs/",
+    "t": "n.",
+    "z": "前提",
+    "e": "basis; assumption",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "contract",
+    "p": "/ˈkɒntrækt/",
+    "t": "n.",
+    "z": "合同；契约",
+    "e": "agreement; deal",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "contractual",
+    "p": "/kənˈtræktʃuəl/",
+    "t": "adj.",
+    "z": "合同规定的；合同的",
+    "e": "agreed in a contract",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "countless",
+    "p": "/ˈkaʊntləs/",
+    "t": "adj.",
+    "z": "无数的",
+    "e": "innumerable; numerous",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "attest",
+    "p": "/əˈtest/",
+    "t": "v.",
+    "z": "证实；证明（attest to）",
+    "e": "confirm; prove; bear witness",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "constraining ← constrain",
+    "p": "/kənˈstreɪn/",
+    "t": "v.",
+    "z": "限制；约束",
+    "e": "limit; restrict",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "mediocrity",
+    "p": "/ˌmiːdiˈɒkrəti/",
+    "t": "n.",
+    "z": "平庸",
+    "e": "ordinariness",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "paradoxically",
+    "p": "/ˌpærəˈdɒksɪkli/",
+    "t": "adv.",
+    "z": "矛盾的是；反常地",
+    "e": "contrary to expectation",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "placing ← place",
+    "p": "/pleɪs/",
+    "t": "v.",
+    "z": "使处于（place sth at risk）",
+    "e": "put; set",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "underperforming",
+    "p": "/ˌʌndəpəˈfɔːmɪŋ/",
+    "t": "adj.",
+    "z": "表现不佳的",
+    "e": "doing badly; weak",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "singled out ← single out",
+    "p": "/ˌsɪŋɡl ˈaʊt/",
+    "t": "phr v.",
+    "z": "挑出；特别指出",
+    "e": "pick out; select",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "costlier ← costly",
+    "p": "/ˈkɒstli/",
+    "t": "adj.",
+    "z": "昂贵的；代价高的",
+    "e": "expensive; damaging",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "hiring ← hire",
+    "p": "/ˈhaɪə(r)/",
+    "t": "v.",
+    "z": "雇用；聘用",
+    "e": "employ; recruit",
+    "m": "2022 Text 2 · 2022 Text 4 · （2 次）"
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "staff",
+    "p": "/stɑːf/",
+    "t": "n.",
+    "z": "全体员工",
+    "e": "employees; personnel",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "arrangement",
+    "p": "/əˈreɪndʒmənt/",
+    "t": "n.",
+    "z": "约定；协议（此处指雇佣关系）",
+    "e": "agreement; deal",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "excessive",
+    "p": "/ɪkˈsesɪv/",
+    "t": "adj.",
+    "z": "过度的",
+    "e": "extreme; undue",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "stringent",
+    "p": "/ˈstrɪndʒənt/",
+    "t": "adj.",
+    "z": "（规定）严格的",
+    "e": "strict; rigorous; tough",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "adversely",
+    "p": "/ˈædvɜːsli/",
+    "t": "adv.",
+    "z": "不利地（adversely affect）",
+    "e": "negatively; harmfully",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "prosperity",
+    "p": "/prɒˈsperəti/",
+    "t": "n.",
+    "z": "繁荣；兴旺",
+    "e": "affluence; wealth; success",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "paradox",
+    "p": "/ˈpærədɒks/",
+    "t": "n.",
+    "z": "悖论；矛盾现象",
+    "e": "contradiction; puzzle",
+    "m": ""
+  },
+  {
+    "g": "2022 Text 4",
+    "w": "contract out of",
+    "p": "/ˌkɒntrækt ˈaʊt əv/",
+    "t": "phr v.",
+    "z": "（英）正式约定不参与",
+    "e": "formally agree not to take part in",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "sympathises ← sympathise",
+    "p": "/ˈsɪmpəθaɪz/",
+    "t": "v.",
+    "z": "支持；赞同（sympathise with）",
+    "e": "support; agree with",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "proposed ← propose",
+    "p": "/prəˈpəʊz/",
+    "t": "v.",
+    "z": "提议；建议",
+    "e": "suggest; put forward",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "pupils ← pupil",
+    "p": "/ˈpjuːpl/",
+    "t": "n.",
+    "z": "（中小学）学生",
+    "e": "student; schoolchild",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "panic",
+    "p": "/ˈpænɪk/",
+    "t": "n.",
+    "z": "恐慌",
+    "e": "alarm; fear; scare",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "remember where your bread is buttered",
+    "p": "/ˈbʌtəd/",
+    "t": "idiom",
+    "z": "知道利益所在；知道靠谁吃饭（≈ know which side one's bread is buttered）",
+    "e": "know where one's advantage lies",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "disproportionate",
+    "p": "/ˌdɪsprəˈpɔːʃənət/",
+    "t": "adj.",
+    "z": "不成比例的；过大的",
+    "e": "out of proportion; excessive",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "sold ← sell",
+    "p": "/sel/",
+    "t": "v.",
+    "z": "卖；销售（sell–sold–sold）",
+    "e": "trade; market",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "benchmark",
+    "p": "/ˈbentʃmɑːk/",
+    "t": "n.",
+    "z": "基准；衡量标准",
+    "e": "standard; yardstick",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "decentralises ← decentralise",
+    "p": "/ˌdiːˈsentrəlaɪz/",
+    "t": "v.",
+    "z": "（权力）下放；分散管理",
+    "e": "devolve; delegate",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "boards ← board",
+    "p": "/bɔːd/",
+    "t": "n.",
+    "z": "委员会；董事会",
+    "e": "committee; council",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "materials ← material",
+    "p": "/məˈtɪəriəl/",
+    "t": "n.",
+    "z": "资料；材料",
+    "e": "resources; matter",
+    "m": "2023 Text 1 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "perspective",
+    "p": "/pəˈspektɪv/",
+    "t": "n.",
+    "z": "观点；看法",
+    "e": "viewpoint; standpoint",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "sponsored ← sponsor",
+    "p": "/ˈspɒnsə(r)/",
+    "t": "v.",
+    "z": "赞助；资助",
+    "e": "fund; finance; support",
+    "m": "2020 Text 3 · 2023 Text 1 · （2 次）"
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "insufficient",
+    "p": "/ˌɪnsəˈfɪʃnt/",
+    "t": "adj.",
+    "z": "不足的；不够的",
+    "e": "inadequate; deficient",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "revision",
+    "p": "/rɪˈvɪʒn/",
+    "t": "n.",
+    "z": "修订；修改",
+    "e": "amendment; alteration",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "implied ← imply",
+    "p": "/ɪmˈplaɪ/",
+    "t": "v.",
+    "z": "暗示；暗指",
+    "e": "suggest; hint; indicate",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 1",
+    "w": "swayed ← sway",
+    "p": "/sweɪ/",
+    "t": "v.",
+    "z": "左右；影响",
+    "e": "influence; persuade",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "rentals ← rental",
+    "p": "/ˈrentl/",
+    "t": "n.",
+    "z": "出租房；租赁（short-term rentals 短租房）",
+    "e": "rented property; letting",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "inventory",
+    "p": "/ˈɪnvəntri/",
+    "t": "n.",
+    "z": "（房源）存量；库存",
+    "e": "stock; supply",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "swaths ← swath",
+    "p": "/swɒθ/",
+    "t": "n.",
+    "z": "一大片；大量（buy up swaths of）",
+    "e": "large area; large part",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "crux",
+    "p": "/krʌks/",
+    "t": "n.",
+    "z": "症结；关键",
+    "e": "heart; core; nub",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "disguising ← disguise",
+    "p": "/dɪsˈɡaɪz/",
+    "t": "v.",
+    "z": "伪装；掩饰（disguise A as B）",
+    "e": "hide; mask; camouflage",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "struggling",
+    "p": "/ˈstrʌɡlɪŋ/",
+    "t": "adj.",
+    "z": "处境艰难的；苦苦挣扎的",
+    "e": "in difficulty; troubled",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "vacancy",
+    "p": "/ˈveɪkənsi/",
+    "t": "n.",
+    "z": "空房；空置（vacancy rate 空置率）",
+    "e": "unoccupied room; empty unit",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "real estate",
+    "p": "/ˈrɪəl ɪsteɪt/",
+    "t": "n.",
+    "z": "房地产",
+    "e": "property; land and buildings",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "proper",
+    "p": "/ˈprɒpə(r)/",
+    "t": "adj.",
+    "z": "恰当的；正当的",
+    "e": "right; appropriate; correct",
+    "m": "2010 Text 4 · 2023 Text 2 · （2 次）"
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "irrational",
+    "p": "/ɪˈræʃənl/",
+    "t": "adj.",
+    "z": "不理性的；不合理的",
+    "e": "unreasonable; illogical",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 2",
+    "w": "inadequate",
+    "p": "/ɪnˈædɪkwət/",
+    "t": "adj.",
+    "z": "不充分的；不够好的",
+    "e": "insufficient; deficient",
+    "m": "2018 Text 4 · 2023 Text 2 · 2026 Text 3 · （3 次）"
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "a bit",
+    "p": "/ə ˈbɪt/",
+    "t": "adv.",
+    "z": "稍微；一点（quite a bit 相当多）",
+    "e": "a little; slightly",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "stand-off",
+    "p": "/ˈstænd ɒf/",
+    "t": "n.",
+    "z": "僵持；对峙",
+    "e": "deadlock; stalemate",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "declined ← decline",
+    "p": "/dɪˈklaɪn/",
+    "t": "v.",
+    "z": "婉拒；谢绝（decline to comment）",
+    "e": "refuse; turn down",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "comment",
+    "p": "/ˈkɒment/",
+    "t": "v.",
+    "z": "评论；发表意见（comment on）",
+    "e": "remark; give an opinion",
+    "m": "2011 Text 3 · 2023 Text 3 · 2025 Text 4 · （3 次）"
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "stock",
+    "p": "/stɒk/",
+    "t": "n.",
+    "z": "库存；存货（in / out of stock）",
+    "e": "supply; inventory",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "concentration",
+    "p": "/ˌkɒnsnˈtreɪʃn/",
+    "t": "n.",
+    "z": "集中；聚集（concentration of power）",
+    "e": "centralization; accumulation",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "diversity",
+    "p": "/daɪˈvɜːsəti/",
+    "t": "n.",
+    "z": "多元化；多样性",
+    "e": "variety; range",
+    "m": "2020 Text 3 · 2022 Text 2 · 2023 Text 3 · （3 次）"
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "plurality",
+    "p": "/plʊəˈræləti/",
+    "t": "n.",
+    "z": "多元；大量",
+    "e": "large number; variety",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "delivering ← deliver",
+    "p": "/dɪˈlɪvə(r)/",
+    "t": "v.",
+    "z": "传递；提供",
+    "e": "convey; provide",
+    "m": "2023 Text 3 · 2025 Text 2 · （2 次）"
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "sentiment",
+    "p": "/ˈsentɪmənt/",
+    "t": "n.",
+    "z": "情绪；（带感情的）看法",
+    "e": "feeling; opinion; view",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "retire",
+    "p": "/rɪˈtaɪə(r)/",
+    "t": "v.",
+    "z": "撤回；挪回（不显眼处）（熟词僻义）",
+    "e": "withdraw; move back",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "consequence",
+    "p": "/ˈkɒnsɪkwəns/",
+    "t": "n.",
+    "z": "（不好的）后果",
+    "e": "result; outcome; effect",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "hesitate",
+    "p": "/ˈhezɪteɪt/",
+    "t": "v.",
+    "z": "犹豫；不愿（hesitate to do）",
+    "e": "be reluctant; waver",
+    "m": "2021 Text 3 · 2023 Text 3 · （2 次）"
+  },
+  {
+    "g": "2023 Text 3",
+    "w": "merger",
+    "p": "/ˈmɜːdʒə(r)/",
+    "t": "n.",
+    "z": "（企业）合并；兼并",
+    "e": "amalgamation; union",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "quality",
+    "p": "/ˈkwɒləti/",
+    "t": "n.",
+    "z": "质量；优劣程度",
+    "e": "standard; grade",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "perceived ← perceive",
+    "p": "/pəˈsiːv/",
+    "t": "v.",
+    "z": "认为；看待（perceived 公认的）",
+    "e": "see; regard; view",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "insidious",
+    "p": "/ɪnˈsɪdiəs/",
+    "t": "adj.",
+    "z": "暗中为害的；隐蔽的",
+    "e": "subtle and harmful; sly",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "counts ← count",
+    "p": "/kaʊnt/",
+    "t": "n.",
+    "z": "计数；总数（citation counts 被引次数）",
+    "e": "total; number; tally",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "instruct",
+    "p": "/ɪnˈstrʌkt/",
+    "t": "v.",
+    "z": "① 教；指导（instruct sb in sth） ② 指示",
+    "e": "① teach; train ② order",
+    "m": ""
+  },
+  {
+    "g": "2023 Text 4",
+    "w": "citation",
+    "p": "/saɪˈteɪʃn/",
+    "t": "n.",
+    "z": "引用；被引",
+    "e": "reference; quotation",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 1",
+    "w": "gravel",
+    "p": "/ˈɡrævl/",
+    "t": "n.",
+    "z": "砾石；碎石",
+    "e": "small stones; pebbles",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 1",
+    "w": "millennia ← millennium",
+    "p": "/mɪˈleniəm/",
+    "t": "n.",
+    "z": "一千年；千年期",
+    "e": "period of 1,000 years",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 1",
+    "w": "delightful",
+    "p": "/dɪˈlaɪtfl/",
+    "t": "adj.",
+    "z": "令人愉快的；讨人喜欢的",
+    "e": "charming; pleasant; lovely",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 1",
+    "w": "absurd",
+    "p": "/əbˈsɜːd/",
+    "t": "adj.",
+    "z": "荒谬的；不合理的",
+    "e": "ridiculous; silly; illogical",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 1",
+    "w": "thriftiness ← thrift",
+    "p": "/ˈθrɪftinəs/",
+    "t": "n.",
+    "z": "节俭；节约",
+    "e": "frugality; economy",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "slings ← sling",
+    "p": "/slɪŋ/",
+    "t": "n.",
+    "z": "（婴儿）背带；吊带；吊索",
+    "e": "baby carrier; strap",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "alloparenting",
+    "p": "/ˌæləʊˈpeərəntɪŋ/",
+    "t": "n.",
+    "z": "异亲抚育（父母以外的人共同带孩子）",
+    "e": "shared childcare by non-parents",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "incorporate",
+    "p": "/ɪnˈkɔːpəreɪt/",
+    "t": "v.",
+    "z": "纳入；包含；（公司）注册成立",
+    "e": "include; integrate; absorb",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "maternal",
+    "p": "/məˈtɜːnl/",
+    "t": "adj.",
+    "z": "母亲的；母性的",
+    "e": "motherly",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "nursery",
+    "p": "/ˈnɜːsəri/",
+    "t": "n.",
+    "z": "托儿所；育儿室",
+    "e": "daycare; crèche",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "assigning ← assign",
+    "p": "/əˈsaɪn/",
+    "t": "v.",
+    "z": "分配；指派",
+    "e": "allocate; appoint; give",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 2",
+    "w": "conventional",
+    "p": "/kənˈvenʃənl/",
+    "t": "adj.",
+    "z": "传统的；常规的",
+    "e": "traditional; usual; standard",
+    "m": "2024 Text 2 · 2026 Text 1 · （2 次）"
+  },
+  {
+    "g": "2024 Text 3",
+    "w": "Gathering ← gathering",
+    "p": "/ˈɡæðərɪŋ/",
+    "t": "n.",
+    "z": "聚会；集会（Magic: The Gathering《万智牌》）",
+    "e": "meeting; assembly",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 3",
+    "w": "hit",
+    "p": "/hɪt/",
+    "t": "n.",
+    "z": "红人；热门（熟词僻义；a hit with sb）",
+    "e": "success; sensation",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 3",
+    "w": "distinctive",
+    "p": "/dɪˈstɪŋktɪv/",
+    "t": "adj.",
+    "z": "独特的；与众不同的",
+    "e": "characteristic; unique",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 3",
+    "w": "tricky",
+    "p": "/ˈtrɪki/",
+    "t": "adj.",
+    "z": "棘手的；难对付的",
+    "e": "difficult; awkward",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 3",
+    "w": "flooded ← flood",
+    "p": "/flʌd/",
+    "t": "v.",
+    "z": "使充斥；大量涌入（be flooded with）",
+    "e": "swamp; overwhelm; inundate",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "storing ← store",
+    "p": "/stɔː(r)/",
+    "t": "v.",
+    "z": "储存；储藏",
+    "e": "keep; save; hold",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "ruling",
+    "p": "/ˈruːlɪŋ/",
+    "t": "n.",
+    "z": "裁决；裁定（issue a ruling）",
+    "e": "decision; judgment",
+    "m": "2019 Text 4 · 2021 Text 4 · 2024 Text 4 · （3 次）"
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "wetlands ← wetland",
+    "p": "/ˈwetlənd/",
+    "t": "n.",
+    "z": "湿地",
+    "e": "marsh; swamp",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "repercussions ← repercussion",
+    "p": "/ˌriːpəˈkʌʃn/",
+    "t": "n.",
+    "z": "（间接的不良）后果；影响",
+    "e": "consequence; effect",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "denied ← deny",
+    "p": "/dɪˈnaɪ/",
+    "t": "v.",
+    "z": "① 拒绝给予；剥夺 ② 否认",
+    "e": "① refuse; withhold ② reject",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "deep-pocketed",
+    "p": "/ˌdiːp ˈpɒkɪtɪd/",
+    "t": "adj.",
+    "z": "财力雄厚的",
+    "e": "wealthy; rich",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "runoff",
+    "p": "/ˈrʌnɒf/",
+    "t": "n.",
+    "z": "（地表）径流",
+    "e": "water draining off land",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "creeks ← creek",
+    "p": "/kriːk/",
+    "t": "n.",
+    "z": "小溪；小河",
+    "e": "stream; brook",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "downstream",
+    "p": "/ˌdaʊnˈstriːm/",
+    "t": "adv.",
+    "z": "在下游；顺流而下",
+    "e": "further along a river",
+    "m": ""
+  },
+  {
+    "g": "2024 Text 4",
+    "w": "relieved",
+    "p": "/rɪˈliːvd/",
+    "t": "adj.",
+    "z": "宽慰的；松了口气的",
+    "e": "reassured; glad",
+    "m": "2020 Text 2 · 2024 Text 4 · （2 次）"
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "literacy",
+    "p": "/ˈlɪtərəsi/",
+    "t": "n.",
+    "z": "① 读写能力 ② 素养（emotional literacy）",
+    "e": "① ability to read and write ② competence",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "rehearsal",
+    "p": "/rɪˈhɜːsl/",
+    "t": "n.",
+    "z": "排练；预演（“rehearsal room” approach）",
+    "e": "practice; run-through",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "broadened ← broaden",
+    "p": "/ˈbrɔːdn/",
+    "t": "v.",
+    "z": "拓宽；扩大",
+    "e": "widen; expand; extend",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "as well as",
+    "p": "/əz ˈwel əz/",
+    "t": "prep./conj.",
+    "z": "以及；还有",
+    "e": "in addition to; and also",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "accompany",
+    "p": "/əˈkʌmpəni/",
+    "t": "v.",
+    "z": "① 伴随 ② 陪同 ③ 伴奏",
+    "e": "① go with; come with ② escort",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "embedding ← embed",
+    "p": "/ɪmˈbed/",
+    "t": "v.",
+    "z": "嵌入；使融入",
+    "e": "fix firmly; integrate",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "replicated ← replicate",
+    "p": "/ˈreplɪkeɪt/",
+    "t": "v.",
+    "z": "复制；（实验）重复得出相同结果",
+    "e": "copy; reproduce; repeat",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "dramatist",
+    "p": "/ˈdræmətɪst/",
+    "t": "n.",
+    "z": "剧作家",
+    "e": "playwright",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "bodies ← body",
+    "p": "/ˈbɒdi/",
+    "t": "n.",
+    "z": "① 机构；团体 ② 身体 ③ 主体",
+    "e": "① organization ② physique ③ main part",
+    "m": "2020 Text 2 · 2025 Text 1 · 2026 Text 2 · （3 次）"
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "omission",
+    "p": "/əˈmɪʃn/",
+    "t": "n.",
+    "z": "遗漏；省略",
+    "e": "exclusion; leaving out",
+    "m": "2018 Text 4 · 2025 Text 1 · （2 次）"
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "preference",
+    "p": "/ˈprefrəns/",
+    "t": "n.",
+    "z": "偏爱；偏好；优先",
+    "e": "liking; favour; priority",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 1",
+    "w": "inspiration",
+    "p": "/ˌɪnspəˈreɪʃn/",
+    "t": "n.",
+    "z": "灵感；鼓舞人心的人或事",
+    "e": "stimulus; motivation; idea",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "scale back",
+    "p": "/ˌskeɪl ˈbæk/",
+    "t": "phr v.",
+    "z": "缩减；削减",
+    "e": "scale down; reduce",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "unarguable",
+    "p": "/ʌnˈɑːɡjuəbl/",
+    "t": "adj.",
+    "z": "无可争辩的",
+    "e": "indisputable; undeniable",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "laboratories ← laboratory",
+    "p": "/ləˈbɒrətri/",
+    "t": "n.",
+    "z": "实验室",
+    "e": "lab",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "spent ← spend",
+    "p": "/spend/",
+    "t": "v.（过去分词）",
+    "z": "花费；（well spent）花得值",
+    "e": "pay out; use；well spent = worthwhile",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "astonishingly",
+    "p": "/əˈstɒnɪʃɪŋli/",
+    "t": "adv.",
+    "z": "令人惊讶地；惊人地",
+    "e": "amazingly; surprisingly",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "heat",
+    "p": "/hiːt/",
+    "t": "n.",
+    "z": "热；热量",
+    "e": "warmth",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "deliver",
+    "p": "/dɪˈlɪvə(r)/",
+    "t": "v.",
+    "z": "① 递送 ② 实现；提供（预期成果）",
+    "e": "① take, bring ② provide; produce; achieve",
+    "m": "2023 Text 3 · 2025 Text 2 · （2 次）"
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "suspicions ← suspicion",
+    "p": "/səˈspɪʃn/",
+    "t": "n.",
+    "z": "怀疑；疑虑",
+    "e": "distrust; mistrust; doubt",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "grave",
+    "p": "/ɡreɪv/",
+    "t": "adj.",
+    "z": "严重的；严肃的",
+    "e": "serious",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "justifiable",
+    "p": "/ˈdʒʌstɪfaɪəbl/",
+    "t": "adj.",
+    "z": "合理的；有正当理由的",
+    "e": "defensible; reasonable",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 2",
+    "w": "fostering ← foster",
+    "p": "/ˈfɒstə(r)/",
+    "t": "v.",
+    "z": "促进；培养",
+    "e": "encourage; promote; nurture",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "streaming",
+    "p": "/ˈstriːmɪŋ/",
+    "t": "n.",
+    "z": "流媒体（播放）；流式传输",
+    "e": "online transmission of video/audio",
+    "m": "2016 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "unintended",
+    "p": "/ˌʌnɪnˈtendɪd/",
+    "t": "adj.",
+    "z": "非故意的；意料之外的",
+    "e": "unplanned; accidental; unexpected",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "rake in",
+    "p": "/ˌreɪk ˈɪn/",
+    "t": "phr v.",
+    "z": "大量赚钱；轻松捞进（大笔钱）",
+    "e": "earn a lot; make a fortune",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "estimates ← estimate",
+    "p": "/ˈestɪmeɪt/",
+    "t": "v.",
+    "z": "估计；估算",
+    "e": "calculate roughly; reckon",
+    "m": "2022 Text 2 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "consensus",
+    "p": "/kənˈsensəs/",
+    "t": "n.",
+    "z": "共识；一致意见",
+    "e": "agreement; accord",
+    "m": "2018 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "association",
+    "p": "/əˌsəʊsiˈeɪʃn/",
+    "t": "n.",
+    "z": "① 协会；社团 ② 联系；关联",
+    "e": "① organization; society ② connection; link",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "material",
+    "p": "/məˈtɪəriəl/",
+    "t": "n.",
+    "z": "① 材料 ②（作品）内容；素材",
+    "e": "① substance ② content",
+    "m": "2023 Text 1 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "countermeasures ← countermeasure",
+    "p": "/ˈkaʊntəmeʒə(r)/",
+    "t": "n.",
+    "z": "对策；反制措施",
+    "e": "response; precaution",
+    "m": "2020 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "confronted ← confront",
+    "p": "/kənˈfrʌnt/",
+    "t": "v.",
+    "z": "面对；遭遇（be confronted with 面临）",
+    "e": "face; encounter; tackle",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "urged ← urge",
+    "p": "/ɜːdʒ/",
+    "t": "v.",
+    "z": "敦促；力劝（urge sb to do）",
+    "e": "press; push; encourage",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "enforcement",
+    "p": "/ɪnˈfɔːsmənt/",
+    "t": "n.",
+    "z": "（法律的）执行；实施（← v. enforce）",
+    "e": "implementation; application",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "overwhelm",
+    "p": "/ˌəʊvəˈwelm/",
+    "t": "v.",
+    "z": "压垮；击败",
+    "e": "overpower; defeat; swamp",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "underestimated ← underestimate",
+    "p": "/ˌʌndərˈestɪmeɪt/",
+    "t": "v.",
+    "z": "低估",
+    "e": "underrate; undervalue",
+    "m": "2022 Text 3 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "prospect",
+    "p": "/ˈprɒspekt/",
+    "t": "n.",
+    "z": "前景；可能性",
+    "e": "possibility; likelihood; outlook",
+    "m": "2014 Text 1 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 3",
+    "w": "eliminating ← eliminate",
+    "p": "/ɪˈlɪmɪneɪt/",
+    "t": "v.",
+    "z": "消除；根除",
+    "e": "remove; get rid of; eradicate",
+    "m": "2018 Text 4 · 2025 Text 3 · （2 次）"
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "ephemeral",
+    "p": "/ɪˈfemərəl/",
+    "t": "adj.",
+    "z": "短暂的；转瞬即逝的（ephemera n. 短期留存的小物件）",
+    "e": "short-lived; transient; fleeting",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "tangible",
+    "p": "/ˈtændʒəbl/",
+    "t": "adj.",
+    "z": "有形的；可触摸的（↔ intangible）",
+    "e": "physical; concrete; touchable",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "preserved ← preserve",
+    "p": "/prɪˈzɜːv/",
+    "t": "v.",
+    "z": "保存；保护；维持",
+    "e": "keep; conserve; protect",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "migration",
+    "p": "/maɪˈɡreɪʃn/",
+    "t": "n.",
+    "z": "（数据）迁移；（人、动物）迁徙",
+    "e": "transfer; movement",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "analog",
+    "p": "/ˈænəlɒɡ/",
+    "t": "n./adj.",
+    "z": "模拟（的）；非数字的（↔ digital）",
+    "e": "non-digital; physical format",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "comment",
+    "p": "/ˈkɒment/",
+    "t": "v.",
+    "z": "评论；发表意见（comment on）",
+    "e": "remark; give an opinion",
+    "m": "2011 Text 3 · 2023 Text 3 · 2025 Text 4 · （3 次）"
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "are less subject to ← be subject to",
+    "p": "/ˈsʌbdʒekt/",
+    "t": "phr.",
+    "z": "易受……影响的；受……支配的",
+    "e": "be liable to; be vulnerable to",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "oversupply",
+    "p": "/ˌəʊvəsəˈplaɪ/",
+    "t": "n.",
+    "z": "供应过剩",
+    "e": "surplus; glut; excess",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "undervaluation",
+    "p": "/ˌʌndəˌvæljuˈeɪʃn/",
+    "t": "n.",
+    "z": "低估；估价过低",
+    "e": "underestimation; underrating",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "underperformance",
+    "p": "/ˌʌndəpəˈfɔːməns/",
+    "t": "n.",
+    "z": "表现不佳；业绩欠佳",
+    "e": "poor performance",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "overreliance",
+    "p": "/ˌəʊvərɪˈlaɪəns/",
+    "t": "n.",
+    "z": "过度依赖（overreliance on）",
+    "e": "excessive dependence",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "hazard",
+    "p": "/ˈhæzəd/",
+    "t": "n.",
+    "z": "危险；隐患",
+    "e": "danger; risk; threat",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "inconvenience",
+    "p": "/ˌɪnkənˈviːniəns/",
+    "t": "n.",
+    "z": "不便；麻烦",
+    "e": "trouble; nuisance; bother",
+    "m": ""
+  },
+  {
+    "g": "2025 Text 4",
+    "w": "databases ← database",
+    "p": "/ˈdeɪtəbeɪs/",
+    "t": "n.",
+    "z": "数据库",
+    "e": "organized collection of data",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "intertwined with ← intertwine with",
+    "p": "/ˌɪntəˈtwaɪn/",
+    "t": "v.（过去分词）",
+    "z": "（与……）紧密相连；交织（become intertwined with）",
+    "e": "closely connected; interwoven; linked",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "domestication",
+    "p": "/dəˌmestɪˈkeɪʃn/",
+    "t": "n.",
+    "z": "驯化；驯养（← v. domesticate）",
+    "e": "taming; breeding for human use",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "genomes ← genome",
+    "p": "/ˈdʒiːnəʊm/",
+    "t": "n.",
+    "z": "基因组",
+    "e": "complete set of genes",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "pinpoint",
+    "p": "/ˈpɪnpɔɪnt/",
+    "t": "v.",
+    "z": "准确找到；确定（时间、位置）",
+    "e": "identify exactly; locate; determine",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "herders ← herder",
+    "p": "/ˈhɜːdə(r)/",
+    "t": "n.",
+    "z": "牧民；放牧人",
+    "e": "herdsman; shepherd",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "coincided with ← coincide with",
+    "p": "/ˌkəʊɪnˈsaɪd/",
+    "t": "phr v.",
+    "z": "与……同时发生；与……一致",
+    "e": "happen at the same time as; correspond to",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "prehistoric",
+    "p": "/ˌpriːhɪˈstɒrɪk/",
+    "t": "adj.",
+    "z": "史前的",
+    "e": "ancient; primitive",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "underwent ← undergo",
+    "p": "/ˌʌndəˈɡəʊ/",
+    "t": "v.（过去式）",
+    "z": "经历；经受（undergo–underwent–undergone）",
+    "e": "experience; go through",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "traits ← trait",
+    "p": "/treɪt/",
+    "t": "n.",
+    "z": "特征；特性（behavioral traits 行为特征）",
+    "e": "characteristic; feature; quality",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "conventional",
+    "p": "/kənˈvenʃənl/",
+    "t": "adj.",
+    "z": "传统的；常规的",
+    "e": "traditional; orthodox; usual",
+    "m": "2024 Text 2 · 2026 Text 1 · （2 次）"
+  },
+  {
+    "g": "2026 Text 1",
+    "w": "awareness",
+    "p": "/əˈweənəs/",
+    "t": "n.",
+    "z": "意识；认识（raise awareness of 提高对……的认识）",
+    "e": "consciousness; understanding",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "profession",
+    "p": "/prəˈfeʃn/",
+    "t": "n.",
+    "z": "职业；行业（pursue a profession 从事某职业）",
+    "e": "occupation; career; vocation",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "transferable",
+    "p": "/trænsˈfɜːrəbl/",
+    "t": "adj.",
+    "z": "可转让的；可转移的（transferable tax credits 可转让税收抵免）",
+    "e": "assignable; movable",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "talent",
+    "p": "/ˈtælənt/",
+    "t": "n.",
+    "z": "人才；有才能的人；天赋（on-screen talent 演员）",
+    "e": "gifted people; ability; flair",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "bodies ← body",
+    "p": "/ˈbɒdi/",
+    "t": "n.",
+    "z": "机构；团体（government bodies 政府机构）",
+    "e": "organization; agency; institution",
+    "m": "2020 Text 2 · 2025 Text 1 · 2026 Text 2 · （3 次）"
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "dramatically",
+    "p": "/drəˈmætɪkli/",
+    "t": "adv.",
+    "z": "大幅度地；显著地",
+    "e": "greatly; significantly; sharply",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "incentives ← incentive",
+    "p": "/ɪnˈsentɪv/",
+    "t": "n.",
+    "z": "激励；（税收等）优惠措施",
+    "e": "inducement; motivation; stimulus",
+    "m": "2021 Text 4 · 2026 Text 2 · （2 次）"
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "nostalgia",
+    "p": "/nɒˈstældʒə/",
+    "t": "n.",
+    "z": "怀旧；怀念（nostalgia for the past）",
+    "e": "longing for the past; wistfulness",
+    "m": "2016 Text 4 · 2026 Text 2 · （2 次）"
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "lure",
+    "p": "/lʊə(r)/",
+    "t": "v./n.",
+    "z": "引诱；吸引",
+    "e": "attract; entice; tempt",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 2",
+    "w": "brain drain",
+    "p": "/ˈbreɪn dreɪn/",
+    "t": "n.",
+    "z": "人才外流",
+    "e": "loss of skilled people to other places",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "wireless",
+    "p": "/ˈwaɪələs/",
+    "t": "n./adj.",
+    "z": "（旧）无线电收音机；无线的",
+    "e": "radio; cordless",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "curated ← curate",
+    "p": "/kjʊəˈreɪt/",
+    "t": "v.",
+    "z": "策划（展览）；组织挑选（内容）",
+    "e": "organize; select and present",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "brush",
+    "p": "/brʌʃ/",
+    "t": "n.",
+    "z": "刷子；扫帚（talking on the brush handle 拄着扫帚闲聊）",
+    "e": "broom; brush",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "serendipity",
+    "p": "/ˌserənˈdɪpəti/",
+    "t": "n.",
+    "z": "意外发现好东西的运气；机缘巧合",
+    "e": "happy chance; luck; fluke",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "niche",
+    "p": "/niːʃ/",
+    "t": "adj./n.",
+    "z": "小众的；细分的（niche interests 小众兴趣）；合适的位置",
+    "e": "specialized; narrow; minority",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "fret",
+    "p": "/fret/",
+    "t": "v.",
+    "z": "烦恼；焦虑（fret about / over sth）",
+    "e": "worry; be anxious; agonize",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "inadequate",
+    "p": "/ɪnˈædɪkwət/",
+    "t": "adj.",
+    "z": "不充分的；不够好的",
+    "e": "insufficient; deficient",
+    "m": "2018 Text 4 · 2023 Text 2 · 2026 Text 3 · （3 次）"
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "humming ← hum",
+    "p": "/hʌm/",
+    "t": "v.",
+    "z": "哼（歌）；发嗡嗡声",
+    "e": "sing softly; buzz; drone",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 3",
+    "w": "sensible",
+    "p": "/ˈsensəbl/",
+    "t": "adj.",
+    "z": "明智的；合理的（≠ sensitive 敏感的）",
+    "e": "reasonable; wise; practical",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "blazes ← blaze",
+    "p": "/bleɪz/",
+    "t": "n.",
+    "z": "（大）火；烈火",
+    "e": "fire; flames; inferno",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "bore ← bear",
+    "p": "/beə(r)/",
+    "t": "v.",
+    "z": "带有；留有（痕迹、伤疤）（熟词僻义）",
+    "e": "carry; show; have",
+    "m": "2021 Text 1 · 2026 Text 4 · （2 次）"
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "severe",
+    "p": "/sɪˈvɪə(r)/",
+    "t": "adj.",
+    "z": "严重的；剧烈的（low-severity 低强度的）",
+    "e": "serious; intense; extreme",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "rid",
+    "p": "/rɪd/",
+    "t": "v.",
+    "z": "使摆脱；清除（rid A of B；get rid of）",
+    "e": "clear; free; purge",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "flammable",
+    "p": "/ˈflæməbl/",
+    "t": "adj.",
+    "z": "易燃的（= inflammable）",
+    "e": "combustible; burnable",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "peter out",
+    "p": "/ˌpiːtər ˈaʊt/",
+    "t": "phr v.",
+    "z": "逐渐减弱；渐渐消失",
+    "e": "fade away; die out; dwindle",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "cadence",
+    "p": "/ˈkeɪdns/",
+    "t": "n.",
+    "z": "节奏；频率（熟词僻义；原义为抑扬顿挫）",
+    "e": "rhythm; pattern; frequency",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "striking",
+    "p": "/ˈstraɪkɪŋ/",
+    "t": "adj.",
+    "z": "显著的；惊人的",
+    "e": "remarkable; noticeable; dramatic",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "suppression",
+    "p": "/səˈpreʃn/",
+    "t": "n.",
+    "z": "扑灭；压制（fire suppression 灭火）",
+    "e": "putting out; quelling; control",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "ignite",
+    "p": "/ɪɡˈnaɪt/",
+    "t": "v.",
+    "z": "起火；点燃",
+    "e": "catch fire; light; kindle",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "oversaw ← oversee",
+    "p": "/ˌəʊvəˈsiː/",
+    "t": "v.",
+    "z": "监督；主管",
+    "e": "supervise; manage; be in charge of",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "prescribed ← prescribe",
+    "p": "/prɪˈskraɪb/",
+    "t": "v.（过去分词）",
+    "z": "规定的；计划的（prescribed burns 计划烧除）；开（药）",
+    "e": "set; laid down; planned",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "scarcity",
+    "p": "/ˈskeəsəti/",
+    "t": "n.",
+    "z": "缺乏；稀少（题目）",
+    "e": "shortage; lack; dearth",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "firefighting",
+    "p": "/ˈfaɪəfaɪtɪŋ/",
+    "t": "n.",
+    "z": "灭火；消防（题目）",
+    "e": "fire control",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "wildfires ← wildfire",
+    "p": "/ˈwaɪldfaɪə(r)/",
+    "t": "n.",
+    "z": "野火；山火（题目）",
+    "e": "forest fire; bushfire",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "markedly",
+    "p": "/ˈmɑːkɪdli/",
+    "t": "adv.",
+    "z": "显著地；明显地（题目）",
+    "e": "noticeably; significantly; considerably",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "urgent",
+    "p": "/ˈɜːdʒənt/",
+    "t": "adj.",
+    "z": "紧迫的；急迫的（题目）",
+    "e": "pressing; critical; vital",
+    "m": ""
+  },
+  {
+    "g": "2026 Text 4",
+    "w": "rewarding",
+    "p": "/rɪˈwɔːdɪŋ/",
+    "t": "adj.",
+    "z": "值得做的；有回报的（题目）",
+    "e": "worthwhile; fruitful; beneficial",
+    "m": ""
+  }
+];
+let S={};try{S=JSON.parse(localStorage.getItem('kyv')||'{}')}catch(e){}
+const save=()=>{try{localStorage.setItem('kyv',JSON.stringify(S))}catch(e){}};
+const $=id=>document.getElementById(id),key=c=>c.g+'|'+c.k;
+const st={mode:'list',hide:false,unk:false,mul:false,i:0,flip:false};
+D.splice(D.findIndex(c=>c.g.startsWith('2014')),0,...[['uniformly','/ˈjuːnɪfɔːmli/','adv.','一致地；均匀地（not uniformly 并非全都）','consistently; evenly; without exception'],['asteroid','/ˈæstərɔɪd/','n.','小行星','minor planet; space rock'],['broader ← broad','/brɔːd/','adj.','更广泛的；更全面的（take a broader look 放宽视野）','wider; more general; more comprehensive'],['adaptable','/əˈdæptəbl/','adj.','适应力强的；可调整的','flexible; versatile; adjustable'],['immediate','/ɪˈmiːdiət/','adj.','近期的；即刻的；直接的（the immediate future 近期的未来）','near; instant; direct'],['considerable','/kənˈsɪdərəbl/','adj.','相当大的；可观的（considerable assurance 相当大的把握）','substantial; significant; sizeable'],['situations ← situation','/ˌsɪtʃuˈeɪʃn/','n.','处境；形势','circumstances; conditions; position'],['descendants ← descendant','/dɪˈsendənt/','n.','后代；子孙','offspring; heirs; successors'],['pessimistic','/ˌpesɪˈmɪstɪk/','adj.','悲观的','gloomy; negative; hopeless'],['futurological','/ˌfjuːtʃərəˈlɒdʒɪkl/','adj.','未来学的（futurologist 未来学家）（题目）','relating to the study of the future'],['sustained','/səˈsteɪnd/','adj.','持续的；持久的（题目）','continuous; prolonged; lasting'],['misplaced','/ˌmɪsˈpleɪst/','adj.','不恰当的；不合时宜的（正文＋题目）','unwarranted; inappropriate; mistaken'],['optimistic','/ˌɒptɪˈmɪstɪk/','adj.','乐观的（题目）','hopeful; positive; confident'],['curb','/kɜːb/','v./n.','抑制；控制（题目）','restrain; limit; control'],['conceive','/kənˈsiːv/','v.','设想；构想（题目）','imagine; envisage; think up']].map(a=>({g:'2013 Text 3',w:a[0],p:a[1],t:a[2],z:a[3],e:a[4],m:''})));
+D.splice(D.findIndex(c=>c.g.startsWith('2014')),0,...[['noncontroversial','/ˌnɒnˌkɒntrəˈvɜːʃl/','adj.','无争议的','undisputed; uncontested; agreed upon'],['parallel','/ˈpærəlel/','adj./n.','平行的；并行的；相似的','similar; side by side; equivalent'],['liberals ← liberal','/ˈlɪbrəl/','n./adj.','自由派人士；开明的','progressives; reformists'],['flew ← fly','/flaɪ/','v.（过去式）','飞；（文中）靠近、逼近（flew too close to the federal sun 逼近联邦权力）','soar; move quickly; go'],['occupied ← occupy','/ˈɒkjupaɪ/','v.','占据；占领（occupy the field 占据立法领域）','take up; fill; hold'],['envisioned ← envision','/ɪnˈvɪʒn/','v.','设想；展望','imagine; foresee; picture'],['enforcement','/ɪnˈfɔːsmənt/','n.','执行；强制（law enforcement 执法）','implementation; application; imposition'],['explicitly','/ɪkˈsplɪsɪtli/','adv.','明确地；明白地','clearly; expressly; directly'],['objecting ← object','/əbˈdʒekt/','v.','反对；提出异议（object to）','oppose; protest; disagree'],['immigration','/ˌɪmɪˈɡreɪʃn/','n.','移民；入境管理','movement of people into a country'],['wishes ← wish','/wɪʃ/','n.','愿望；意愿（Congress’s wishes 国会的意愿）','desires; intentions; will'],['disturbed ← disturb','/dɪˈstɜːb/','v.','打乱；扰乱（题目）','upset; disrupt; unsettle'],['overstepped ← overstep','/ˌəʊvəˈstep/','v.','越过；超越（权限）（题目）','exceed; go beyond; transgress'],['deprived ← deprive','/dɪˈpraɪv/','v.','剥夺（deprive sb of sth）（题目）','strip; rob; take away from'],['contradicted ← contradict','/ˌkɒntrəˈdɪkt/','v.','与…矛盾；反驳（题目）','conflict with; oppose; deny'],['intervention','/ˌɪntəˈvenʃn/','n.','干预；介入（题目）','interference; involvement'],['stood ← stand','/stænd/','v.（过去式）','站；（stand in favor of 支持）（题目）','support; back; side with'],['violated ← violate','/ˈvaɪəleɪt/','v.','违反；违背（题目）','break; breach; infringe'],['outweighs ← outweigh','/ˌaʊtˈweɪ/','v.','比…更重要；胜过（题目）','override; exceed; surpass']].map(a=>({g:'2013 Text 4',w:a[0],p:a[1],t:a[2],z:a[3],e:a[4],m:''})));
+D.splice(D.findIndex(c=>c.g.startsWith('2016')),0,...[['grounds','/ɡraʊndz/','n.','理由；根据（have grounds for complaint 有理由抱怨）','reasons; basis; justification'],['pile into','/paɪl ˈɪntuː/','phr. v.','涌入；挤入','crowd into; flood into'],['preparation','/ˌprepəˈreɪʃn/','n.','准备；备考','readiness; groundwork; training'],['leaves ← leave','/liːv/','v.','使处于（某种状态）；留下（leave sb with debt 使某人背负债务）','put in a state; result in; make'],['restrictive','/rɪˈstrɪktɪv/','adj.','限制性的；约束的','limiting; confining; constraining'],['innovation','/ˌɪnəˈveɪʃn/','n.','创新；革新','novelty; modernization; new method'],['hindrance','/ˈhɪndrəns/','n.','障碍；阻碍（题目）','obstacle; barrier; impediment'],['flawed','/flɔːd/','adj.','有缺陷的；有瑕疵的（题目）','defective; faulty; imperfect'],['causes ← cause','/kɔːz/','n.','原因；起因（题目）','reasons; origins; sources']].map(a=>({g:'2014 Text 2',w:a[0],p:a[1],t:a[2],z:a[3],e:a[4],m:''})));
+// 2014 Text 3–4: boxed vocabulary added 2026-11-07.
+D.splice(D.findIndex(c=>Number(c.g.slice(0,4))>2014),0,...[
+  {
+    "g": "2014 Text 3",
+    "w": "perpetuate",
+    "p": "/pəˈpetʃueɪt/",
+    "t": "v.",
+    "z": "使持续；使长存（perpetuate the myth 使某种错误观念延续）",
+    "e": "keep something going; cause something to continue",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 3",
+    "w": "scattered",
+    "p": "/ˈskætəd/",
+    "t": "adj.",
+    "z": "分散的；零散的（文中指目标不集中、各不相同）",
+    "e": "dispersed; spread out; lacking a common focus",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 3",
+    "w": "culture",
+    "p": "/ˈkʌltʃə(r)/",
+    "t": "n.",
+    "z": "文化；风气（the culture of research 科研文化、科研风气）（题目）",
+    "e": "shared values and practices; a way of thinking and working",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "crafting ← craft",
+    "p": "/krɑːft/",
+    "t": "v.",
+    "z": "精心制作；精心制定（craft coherent curricula 制定连贯的课程体系）",
+    "e": "make carefully; design with skill",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "coherent",
+    "p": "/kəʊˈhɪərənt/",
+    "t": "adj.",
+    "z": "连贯的；条理清楚的（coherent curricula 连贯的课程体系）",
+    "e": "logical; consistent; well organized",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "deprived ← deprive",
+    "p": "/dɪˈpraɪv/",
+    "t": "v.",
+    "z": "剥夺；使丧失（be deprived of its benefits 未能享有其益处）",
+    "e": "deny someone something; take something away from someone",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "routinely",
+    "p": "/ruːˈtiːnli/",
+    "t": "adv.",
+    "z": "惯常地；例行地；经常",
+    "e": "regularly; habitually; as a usual practice",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "interpretation",
+    "p": "/ɪnˌtɜːprɪˈteɪʃn/",
+    "t": "n.",
+    "z": "解释；理解；阐释（interpretation of history 对历史的解读）",
+    "e": "explanation; understanding; a way of explaining meaning",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "proper",
+    "p": "/ˈprɒpə(r)/",
+    "t": "adj.",
+    "z": "适当的；恰当的；正当的（the proper subject of study 适当的研究对象）",
+    "e": "appropriate; suitable; correct",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "implies ← imply",
+    "p": "/ɪmˈplaɪ/",
+    "t": "v.",
+    "z": "暗示；意味着（题目）",
+    "e": "suggest indirectly; indicate without stating explicitly",
+    "m": ""
+  },
+  {
+    "g": "2014 Text 4",
+    "w": "grasp",
+    "p": "/ɡrɑːsp/",
+    "t": "v.",
+    "z": "理解；领会；抓住（题目）",
+    "e": "understand; comprehend; take hold of",
+    "m": ""
+  }
+]);
+// Refresh repeat labels for words included in this batch.
+{
+ const addedRoots=new Set(["perpetuate", "scattered", "culture", "craft", "coherent", "deprive", "routinely", "interpretation", "proper", "imply", "grasp"]);
+ const root=c=>c.w.split(' ← ').pop().toLowerCase();
+ for(const word of addedRoots){
+  const matches=D.filter(c=>root(c)===word);
+  const groups=[...new Set(matches.map(c=>c.g))];
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
+// 2012 Text 3: boxed vocabulary added 2026-11-07.
+D.splice(D.findIndex(c=>c.g>'2012 Text 3'),0,...[
+  {
+    "g": "2012 Text 3",
+    "w": "idealized ← idealize",
+    "p": "/aɪˈdɪəlaɪz/",
+    "t": "v.（过去分词作定语）",
+    "z": "理想化的（an idealized version 理想化的描述；idealize 把……理想化）",
+    "e": "present something as perfect or better than it really is",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 3",
+    "w": "duplication",
+    "p": "/ˌdjuːplɪˈkeɪʃn/",
+    "t": "n.",
+    "z": "重复；复制（文中指重复已有的研究或发现）",
+    "e": "repetition; copying; doing the same thing again",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 3",
+    "w": "deceptiveness",
+    "p": "/dɪˈseptɪvnəs/",
+    "t": "n.",
+    "z": "欺骗性；迷惑性（题目）",
+    "e": "the quality of being misleading or deceptive",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 3",
+    "w": "credibility",
+    "p": "/ˌkredəˈbɪləti/",
+    "t": "n.",
+    "z": "可信性；可信度（credibility process 建立可信度的过程）（题目）",
+    "e": "believability; the quality of being trusted or believed",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 3",
+    "w": "inspection",
+    "p": "/ɪnˈspekʃn/",
+    "t": "n.",
+    "z": "检查；审查（strict inspection 严格检查）（题目）",
+    "e": "careful examination; checking; scrutiny",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 3",
+    "w": "credible",
+    "p": "/ˈkredəbl/",
+    "t": "adj.",
+    "z": "可信的；可靠的（题目）",
+    "e": "believable; trustworthy; convincing",
+    "m": ""
+  }
+]);
+// 2012 Text 4: boxed vocabulary added 2026-11-07.
+D.splice(D.findIndex(c=>c.g>'2012 Text 4'),0,...[
+  {
+    "g": "2012 Text 4",
+    "w": "thriving ← thrive",
+    "p": "/θraɪv/",
+    "t": "v.（动名词）",
+    "z": "兴旺；繁荣；蓬勃发展（文中指公共部门工会的兴盛）",
+    "e": "flourish; prosper; develop successfully",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "practices ← practice",
+    "p": "/ˈpræktɪs/",
+    "t": "n.（复数）",
+    "z": "惯例；做法（work practices 工作惯例、工作方式）",
+    "e": "customary ways of working; established procedures",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "clamp",
+    "p": "/klæmp/",
+    "t": "v.",
+    "z": "夹紧；钳住（文中 clamp down 指严加管制、严厉打击）",
+    "e": "fasten tightly; in clamp down, take strict action to stop or control something",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "rallied ← rally",
+    "p": "/ˈræli/",
+    "t": "v.（过去式）",
+    "z": "召集；团结；动员（rally supporters 动员支持者）",
+    "e": "bring people together; mobilize support",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "prudent",
+    "p": "/ˈpruːdnt/",
+    "t": "adj.",
+    "z": "谨慎的；审慎的（题目）",
+    "e": "careful; cautious; showing good judgment",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "seldom",
+    "p": "/ˈseldəm/",
+    "t": "adv.",
+    "z": "很少；不常（题目）",
+    "e": "rarely; not often",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "augmented ← augment",
+    "p": "/ɔːɡˈment/",
+    "t": "v.（过去分词）",
+    "z": "增加；提高；扩大（indirectly augmented 间接增加的）（题目）",
+    "e": "increase; enlarge; make greater",
+    "m": ""
+  },
+  {
+    "g": "2012 Text 4",
+    "w": "barrier",
+    "p": "/ˈbæriə(r)/",
+    "t": "n.",
+    "z": "障碍；阻碍（a barrier to reforms 改革的障碍）（题目）",
+    "e": "obstacle; hindrance; something that prevents progress",
+    "m": ""
+  }
+]);
+{
+ const addedRoots=new Set(["thrive", "practice", "clamp", "rally", "prudent", "seldom", "augment", "barrier"]);
+ const root=c=>c.w.split(' ← ').pop().toLowerCase();
+ for(const word of addedRoots){
+  const matches=D.filter(c=>root(c)===word);
+  const groups=[...new Set(matches.map(c=>c.g))];
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
+// 2015 Text 1: boxed vocabulary added 2026-11-08.
+D.splice(D.findIndex(c=>c.g>'2015 Text 1'),0,...[
+  {
+    "g": "2015 Text 1",
+    "w": "abdicate",
+    "p": "/ˈæbdɪkeɪt/",
+    "t": "v.",
+    "z": "退位；放弃（权力或职责）（文中指国王退位）",
+    "e": "give up the throne; relinquish power or responsibility",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "polarised ← polarise",
+    "p": "/ˈpəʊləraɪz/",
+    "t": "v.（过去分词）",
+    "z": "使两极分化；使形成对立（public opinion is polarised 公众意见两极分化；美式拼写 polarize）",
+    "e": "divide into two sharply opposing groups or opinions",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "infested ← infest",
+    "p": "/ɪnˈfest/",
+    "t": "v.（过去分词）",
+    "z": "大量滋生于；遍布（通常指害虫等；monarch-infested 讽刺君主众多）",
+    "e": "be present in large numbers, especially in an unwanted or harmful way",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "inequalities ← inequality",
+    "p": "/ˌɪnɪˈkwɒləti/",
+    "t": "n.（复数）",
+    "z": "不平等；不均等（文中指社会地位、权利等方面的不平等）",
+    "e": "unequal conditions; disparities in rights, status or opportunities",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "bizarre",
+    "p": "/bɪˈzɑː(r)/",
+    "t": "adj.",
+    "z": "奇异的；古怪的；异乎寻常的",
+    "e": "very strange; unusual; odd",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "aristocratic",
+    "p": "/ˌærɪstəˈkrætɪk/",
+    "t": "adj.",
+    "z": "贵族的；贵族式的（aristocratic families 贵族家庭）",
+    "e": "relating to the aristocracy; characteristic of the nobility",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "eased ← ease",
+    "p": "/iːz/",
+    "t": "v.（过去式）",
+    "z": "缓和；减轻（文中选项指缓和与对手的关系）（题目）",
+    "e": "make less tense or severe; alleviate; relax",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "everlasting",
+    "p": "/ˌevəˈlɑːstɪŋ/",
+    "t": "adj.",
+    "z": "永恒的；持久的（题目）",
+    "e": "eternal; lasting forever; enduring",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "embodiment",
+    "p": "/ɪmˈbɒdimənt/",
+    "t": "n.",
+    "z": "体现；化身；具体表现（题目）",
+    "e": "a concrete expression or representation of an idea or quality",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 1",
+    "w": "nobility",
+    "p": "/nəʊˈbɪləti/",
+    "t": "n.",
+    "z": "贵族阶层；高贵（文中 the nobility 指贵族阶层）（题目）",
+    "e": "the aristocracy; people of high hereditary rank; nobleness",
+    "m": ""
+  }
+]);
+// 2015 Text 2–3: boxed vocabulary added 2026-11-10.
+D.splice(D.findIndex(c=>c.g>'2015 Text 3'),0,...[
+  {
+    "g": "2015 Text 2",
+    "w": "sort out",
+    "p": "/sɔːt aʊt/",
+    "t": "phr. v.",
+    "z": "理清；弄明白；解决（文中指厘清第四修正案如何适用于数字信息）",
+    "e": "clarify; resolve; work out",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 2",
+    "w": "reinterpretation",
+    "p": "/ˌriːɪnˌtɜːprɪˈteɪʃn/",
+    "t": "n.",
+    "z": "重新解释；重新阐释（题目）",
+    "e": "a new or different interpretation; explaining something in a new way",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 2",
+    "w": "violates ← violate",
+    "p": "/ˈvaɪəleɪt/",
+    "t": "v.",
+    "z": "违反；违背；侵犯（violate principles 违背原则）（题目）",
+    "e": "break; breach; infringe",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 3",
+    "w": "statistical",
+    "p": "/stəˈtɪstɪkl/",
+    "t": "adj.",
+    "z": "统计的；统计学的（statistical checks 统计核查）",
+    "e": "relating to statistics or the analysis of numerical data",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 3",
+    "w": "diminishes ← diminish",
+    "p": "/dɪˈmɪnɪʃ/",
+    "t": "v.",
+    "z": "减小；削弱；降低（diminish the role of reviewers 削弱审稿人的作用）（题目）",
+    "e": "reduce; weaken; make less important",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 3",
+    "w": "foreseeable",
+    "p": "/fɔːˈsiːəbl/",
+    "t": "adj.",
+    "z": "可预见的；可预料的（in the foreseeable future 在可预见的未来）（题目）",
+    "e": "predictable; able to be anticipated",
+    "m": ""
+  }
+]);
+{
+ const roots=new Set(["sort out", "reinterpretation", "violate", "statistical", "diminish", "foreseeable"]);
+ for(const word of roots){
+  const matches=D.filter(c=>c.w.split(' ← ').pop().toLowerCase()===word);
+  const groups=[...new Set(matches.map(c=>c.g))];
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
+const gs=[...new Set(D.map(c=>c.g))];
+gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
+const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
+D.forEach(c=>{c.k=c.w;c.w=c.w.split(' ← ').map(p=>/^[A-Z][^A-Z]*$/.test(p)?p[0].toLowerCase()+p.slice(1):p).join(' ← ')});
+function list(){const q=$('q').value.trim().toLowerCase(),g=$('g').value;
+return D.filter(c=>(!g||c.g===g)&&(!q||(c.w+c.z+c.e).toLowerCase().includes(q))&&(!st.unk||!S[key(c)])&&(!st.mul||c.m))}
+function render(){const L=list();const kn=D.filter(c=>S[key(c)]).length;
+$('stat').textContent=`共 ${D.length} 词 · 已掌握 ${kn} · 当前显示 ${L.length}`;
+['tList','tCard'].forEach(i=>$(i).classList.toggle('on',(i==='tList')===(st.mode==='list')));
+$('fHide').classList.toggle('on',st.hide);$('fUnk').classList.toggle('on',st.unk);$('fMul').classList.toggle('on',st.mul);
+const M=$('main');
+if(!L.length){M.innerHTML='<p class="hint">没有符合条件的单词</p>';return}
+if(st.mode==='card'){if(st.i>=L.length)st.i=0;const c=L[st.i];
+M.innerHTML=`<div id="card" tabindex="0" role="button" aria-label="翻面"><div class="w">${esc(c.w)}</div><div><span class="ip">${esc(c.p)}</span><span class="ps">${esc(c.t)}</span></div>
+${st.flip?`<div class="z">${esc(c.z)}</div><div class="e">${esc(c.e)}</div>${c.m?`<div class="m">多次出现：${esc(c.m)}</div>`:''}`:'<div class="hint">点击查看释义</div>'}</div>
+<div class="nav"><button id="pv">上一个</button><button id="kn">${S[key(c)]?'取消掌握':'已掌握'}</button><button id="nx">下一个</button></div>
+<div class="hint">${st.i+1} / ${L.length} · ${esc(c.g)}</div>`;
+const card=$('card');card.onclick=()=>{st.flip=!st.flip;render()};
+$('pv').onclick=()=>{st.i=(st.i-1+L.length)%L.length;st.flip=false;render()};
+$('nx').onclick=()=>{st.i=(st.i+1)%L.length;st.flip=false;render()};
+$('kn').onclick=()=>{S[key(c)]=!S[key(c)];save();if(st.unk&&S[key(c)])st.flip=false;render()};return}
+let h='',last='';
+L.forEach((c,n)=>{if(c.g!==last){h+=`<div class="gh">${esc(c.g)}</div>`;last=c.g}
+h+=`<div class="it ${S[key(c)]?'k':''}"><div class="b"><div><span class="w">${esc(c.w)}</span><span class="ip">${esc(c.p)}</span><span class="ps">${esc(c.t)}</span></div>
+<div class="${st.hide?'hide':''}" onclick="this.classList.remove('hide')"><div class="z">${esc(c.z)}</div><div class="e">${esc(c.e)}</div></div>
+${c.m?`<div class="m">多次出现：${esc(c.m)}</div>`:''}</div><button class="chk" data-n="${n}" aria-label="标记掌握">${S[key(c)]?'✓':'○'}</button></div>`});
+M.innerHTML=h;
+M.querySelectorAll('.chk').forEach(b=>b.onclick=()=>{const c=L[+b.dataset.n];S[key(c)]=!S[key(c)];save();render()})}
+$('q').oninput=$('g').onchange=()=>{st.i=0;st.flip=false;render()};
+$('tList').onclick=()=>{st.mode='list';render()};$('tCard').onclick=()=>{st.mode='card';st.flip=false;render()};
+$('fHide').onclick=()=>{st.hide=!st.hide;render()};
+$('fUnk').onclick=()=>{st.unk=!st.unk;st.i=0;render()};$('fMul').onclick=()=>{st.mul=!st.mul;st.i=0;render()};
+render();
+</script></body></html>

@@ -6274,6 +6274,9 @@ D.splice(D.findIndex(c=>c.g>'2016 Text 3'),0,...[
   if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
  }
 }
+// 2016 Text 4: supplement boxed vocabulary 2026-11-15.
+D.splice(D.findIndex(c=>c.g==='2016 Text 4'&&c.w==='aggressive'),0,{"g": "2016 Text 4", "w": "legacy", "p": "/ˈleɡəsi/", "t": "n./adj.", "z": "遗产；遗留的、传统的（legacy product 指沿袭旧有形式、面向忠实顾客保留的传统产品）", "e": "something handed down from the past; relating to an older product or system still in use", "m": ""});
+D.splice(D.findIndex(c=>c.g==='2016 Text 4'&&c.w==='glory'),0,{"g": "2016 Text 4", "w": "restore", "p": "/rɪˈstɔː(r)/", "t": "v.", "z": "恢复；使复原；修复（restore the glory of former times 恢复昔日的辉煌）（题目）", "e": "bring back; return to a former condition; repair", "m": ""});
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

@@ -6277,6 +6277,54 @@ D.splice(D.findIndex(c=>c.g>'2016 Text 3'),0,...[
 // 2016 Text 4: supplement boxed vocabulary 2026-11-15.
 D.splice(D.findIndex(c=>c.g==='2016 Text 4'&&c.w==='aggressive'),0,{"g": "2016 Text 4", "w": "legacy", "p": "/ˈleɡəsi/", "t": "n./adj.", "z": "遗产；遗留的、传统的（legacy product 指沿袭旧有形式、面向忠实顾客保留的传统产品）", "e": "something handed down from the past; relating to an older product or system still in use", "m": ""});
 D.splice(D.findIndex(c=>c.g==='2016 Text 4'&&c.w==='glory'),0,{"g": "2016 Text 4", "w": "restore", "p": "/rɪˈstɔː(r)/", "t": "v.", "z": "恢复；使复原；修复（restore the glory of former times 恢复昔日的辉煌）（题目）", "e": "bring back; return to a former condition; repair", "m": ""});
+// 2026-11-15：补录 2015 Text 4 两张照片中的方框词。
+D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
+  {
+    "g": "2015 Text 4",
+    "w": "unsettling",
+    "p": "/ʌnˈsetlɪŋ/",
+    "t": "adj.",
+    "z": "令人不安的；令人担忧的（文中修饰诚信的缺失）",
+    "e": "disturbing; worrying; causing unease",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 4",
+    "w": "dearth",
+    "p": "/dɜːθ/",
+    "t": "n.",
+    "z": "缺乏；不足（a dearth of integrity：诚信的缺失）",
+    "e": "a shortage; scarcity; lack",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 4",
+    "w": "upset",
+    "p": "/ʌpˈset/",
+    "t": "adj.",
+    "z": "心烦的；不安的；难过的（be upset by：因……而不安；第36题题干）",
+    "e": "unhappy; worried; distressed",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 4",
+    "w": "sorting ← sort",
+    "p": "/sɔːt/",
+    "t": "v.",
+    "z": "分类；筛选（sorting mechanism：筛选机制；第36题选项）",
+    "e": "classify; arrange into groups; select",
+    "m": ""
+  },
+  {
+    "g": "2015 Text 4",
+    "w": "distorted ← distort",
+    "p": "/dɪˈstɔːt/",
+    "t": "v.",
+    "z": "歪曲；扭曲（distorted values：被扭曲的价值观；第39题选项）",
+    "e": "twist; misrepresent; deform",
+    "m": ""
+  }
+]);
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

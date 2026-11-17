@@ -6325,6 +6325,157 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
     "m": ""
   }
 ]);
+// 2026-11-17: boxed vocabulary from 2017 Text 1–2 photos.
+{
+ const added=[
+  {
+    "g": "2017 Text 1",
+    "w": "terrorists ← terrorist",
+    "p": "/ˈterərɪst/",
+    "t": "n.（复数）",
+    "z": "恐怖分子（文中指可能击落航班的人）",
+    "e": "a person who uses violence for political purposes",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 1",
+    "w": "stuck ← stick",
+    "p": "/stʌk/",
+    "t": "adj./过去分词",
+    "z": "被困住的；卡住的（get stuck in security lines 被困在安检队伍中）（题目）",
+    "e": "unable to move or get out; trapped",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "esteemed",
+    "p": "/ɪˈstiːmd/",
+    "t": "adj.",
+    "z": "受尊敬的；受敬重的（esteemed members 受尊敬的成员；esteem 作动词指尊敬、敬重）",
+    "e": "respected; highly regarded",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "erupted ← erupt",
+    "p": "/ɪˈrʌpt/",
+    "t": "v.（过去式）",
+    "z": "爆发；突然发生（protests erupted 抗议爆发；也指火山喷发）",
+    "e": "break out suddenly; burst forth",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "sacred",
+    "p": "/ˈseɪkrɪd/",
+    "t": "adj.",
+    "z": "神圣的；不可侵犯的（sacred land 圣地）",
+    "e": "holy; regarded with great respect",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "sovereign",
+    "p": "/ˈsɒvrɪn/",
+    "t": "adj.",
+    "z": "拥有主权的；独立自主的（a sovereign nation 主权国家）",
+    "e": "independent and self-governing",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "disassemble",
+    "p": "/ˌdɪsəˈsembl/",
+    "t": "v.",
+    "z": "拆卸；拆开（文中指拆除望远镜；assemble 意为组装）",
+    "e": "take apart; dismantle",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "heritage",
+    "p": "/ˈherɪtɪdʒ/",
+    "t": "n.",
+    "z": "遗产；传统（cultural heritage 文化遗产）",
+    "e": "traditions and valued things passed down from the past",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "regrettable",
+    "p": "/rɪˈɡretəbl/",
+    "t": "adj.",
+    "z": "令人遗憾的；可惜的（regrettable decline 令人遗憾的衰落）（题目）",
+    "e": "unfortunate; causing regret",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "decline",
+    "p": "/dɪˈklaɪn/",
+    "t": "n.",
+    "z": "衰落；下降（题目中指天文学的衰落）；作动词也可指下降、婉拒",
+    "e": "a decrease; deterioration; loss of strength",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "deemed ← deem",
+    "p": "/diːm/",
+    "t": "v.（过去分词）",
+    "z": "认为；视为（be deemed an ideal site 被认为是理想地点）（题目）",
+    "e": "consider; regard as; judge",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "astronomical",
+    "p": "/ˌæstrəˈnɒmɪkl/",
+    "t": "adj.",
+    "z": "天文学的（astronomical site 天文观测地点）；也可指数字极大的（题目）",
+    "e": "relating to astronomy; extremely large",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "humiliating",
+    "p": "/hjuːˈmɪlieɪtɪŋ/",
+    "t": "adj.",
+    "z": "令人屈辱的；使人蒙羞的（humiliating history 屈辱的历史；humiliate 意为羞辱）（题目）",
+    "e": "embarrassing and damaging to one's dignity",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "astronomy",
+    "p": "/əˈstrɒnəmi/",
+    "t": "n.",
+    "z": "天文学（研究恒星、行星等天体的科学）（题目）",
+    "e": "the scientific study of stars, planets and other celestial objects",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 2",
+    "w": "hesitancy",
+    "p": "/ˈhezɪtənsi/",
+    "t": "n.",
+    "z": "犹豫；迟疑（slight hesitancy 略有犹豫）（题目）",
+    "e": "hesitation; uncertainty; reluctance",
+    "m": ""
+  }
+];
+ for(const c of added){
+  const root=c.w.split(' ← ').pop().toLowerCase();
+  if(!D.some(x=>x.g===c.g&&x.w.split(' ← ').pop().toLowerCase()===root)){
+   const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
+  }
+ }
+ for(const root of new Set(added.map(c=>c.w.split(' ← ').pop().toLowerCase()))){
+  const matches=D.filter(c=>c.w.split(' ← ').pop().toLowerCase()===root);
+  const groups=[...new Set(matches.map(c=>c.g))];
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

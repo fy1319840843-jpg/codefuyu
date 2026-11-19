@@ -6476,6 +6476,173 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
   if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
  }
 }
+{
+ const boxed2017=[
+  {
+    "g": "2017 Text 3",
+    "w": "predicted ← predict",
+    "p": "/prɪˈdɪkt/",
+    "t": "v.",
+    "z": "预计；预言（这里指预计经济增长会放缓）",
+    "e": "forecast; say in advance",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "forecasted ← forecast",
+    "p": "/ˈfɔːkɑːst/",
+    "t": "v.（过去分词）",
+    "z": "预测；预报（forecasted doom 预料中的灾难）",
+    "e": "predict; estimate in advance",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "identified ← identify",
+    "p": "/aɪˈdentɪfaɪ/",
+    "t": "v.",
+    "z": "把……等同于……（identify A with B）（题目）",
+    "e": "equate A with B; associate A with B",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "policymakers ← policymaker",
+    "p": "/ˈpɒləsiˌmeɪkə/",
+    "t": "n.",
+    "z": "政策制定者（题目）",
+    "e": "a person who makes policy",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "sponsored ← sponsor",
+    "p": "/ˈspɒnsə/",
+    "t": "v.（过去分词）",
+    "z": "资助；赞助（题目）",
+    "e": "fund; financially support",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "criteria ← criterion",
+    "p": "/kraɪˈtɪəriən/",
+    "t": "n.",
+    "z": "标准；准则（criteria 是复数）（题目）",
+    "e": "a standard for judging or deciding",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "enlightening",
+    "p": "/ɪnˈlaɪtənɪŋ/",
+    "t": "adj.",
+    "z": "有启发性的；使人增进了解的（题目）",
+    "e": "informative; illuminating",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 3",
+    "w": "foreshadows ← foreshadow",
+    "p": "/fɔːˈʃædəʊ/",
+    "t": "v.",
+    "z": "预示；是……的先兆（题目）",
+    "e": "signal in advance; indicate what will happen",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "integrity",
+    "p": "/ɪnˈteɡrəti/",
+    "t": "n.",
+    "z": "正直；廉洁（这里指公共事务中的公正廉洁）",
+    "e": "honesty; adherence to moral principles",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "transparency",
+    "p": "/trænsˈpærənsi/",
+    "t": "n.",
+    "z": "透明度；公开性（government transparency 政务公开）",
+    "e": "openness; lack of secrecy",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "duties ← duty",
+    "p": "/ˈdjuːti/",
+    "t": "n.",
+    "z": "职责；职务上的责任（题目）",
+    "e": "responsibility; obligation",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "compromise",
+    "p": "/ˈkɒmprəmaɪz/",
+    "t": "n.",
+    "z": "妥协；折中（make no compromise 不作妥协）（题目）",
+    "e": "an agreement reached by mutual concessions",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "contemptuous",
+    "p": "/kənˈtemptʃuəs/",
+    "t": "adj.",
+    "z": "轻蔑的；鄙视的（be contemptuous of 对……不屑）（题目）",
+    "e": "scornful; disdainful",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "concrete",
+    "p": "/ˈkɒŋkriːt/",
+    "t": "adj.",
+    "z": "具体的；实实在在的（concrete returns 实际回报）（题目）",
+    "e": "specific; tangible",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "sizable",
+    "p": "/ˈsaɪzəbl/",
+    "t": "adj.",
+    "z": "相当大的；可观的（英式也拼作 sizeable）（题目）",
+    "e": "considerable; fairly large",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "constituents ← constituent",
+    "p": "/kənˈstɪtjuənt/",
+    "t": "n.",
+    "z": "选区选民；所代表的人（题目）",
+    "e": "a voter represented by an elected official",
+    "m": ""
+  },
+  {
+    "g": "2017 Text 4",
+    "w": "sarcastic",
+    "p": "/sɑːˈkæstɪk/",
+    "t": "adj.",
+    "z": "讽刺的；挖苦的（题目）",
+    "e": "mocking; using irony to criticize",
+    "m": ""
+  }
+];
+ const vocabRoot=c=>c.w.split(' ← ').pop().toLowerCase();
+ for(const c of boxed2017){
+  if(D.some(x=>x.g===c.g&&vocabRoot(x)===vocabRoot(c))) continue;
+  const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
+ }
+ for(const root of new Set(boxed2017.map(vocabRoot))){
+  const matches=D.filter(c=>vocabRoot(c)===root);
+  const groups=[...new Set(matches.map(c=>c.g))].sort();
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

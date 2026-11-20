@@ -6643,6 +6643,56 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
   if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
  }
 }
+{
+ const boxed2018Text1=[
+  {
+    "g": "2018 Text 1",
+    "w": "dismiss",
+    "p": "/dɪsˈmɪs/",
+    "t": "v.",
+    "z": "不予考虑；排除（这里指不把某种可能性完全排除）",
+    "e": "reject as unworthy of consideration",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 1",
+    "w": "squeezed ← squeeze",
+    "p": "/skwiːz/",
+    "t": "v.（过去分词）",
+    "z": "挤压；使处境艰难（这里指中产阶层受到的冲击格外大）",
+    "e": "put under pressure; constrain",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 1",
+    "w": "widening ← widen",
+    "p": "/ˈwaɪdən/",
+    "t": "v.（动名词）",
+    "z": "扩大；加大（这里指收入差距扩大）（题目）",
+    "e": "become wider; increase in size",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 1",
+    "w": "groundless",
+    "p": "/ˈɡraʊndləs/",
+    "t": "adj.",
+    "z": "毫无根据的；没有事实依据的",
+    "e": "not based on facts or evidence",
+    "m": ""
+  }
+];
+ const vocabRoot=c=>c.w.split(' ← ').pop().toLowerCase();
+ for(const c of boxed2018Text1){
+  if(D.some(x=>x.g===c.g&&vocabRoot(x)===vocabRoot(c))) continue;
+  const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
+ }
+ for(const root of new Set(boxed2018Text1.map(vocabRoot))){
+  const matches=D.filter(c=>vocabRoot(c)===root);
+  const groups=[...new Set(matches.map(c=>c.g))].sort();
+  if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

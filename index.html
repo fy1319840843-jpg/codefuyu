@@ -6644,7 +6644,7 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
  }
 }
 {
- const boxed2018Text1=[
+ const boxed2018=[
   {
     "g": "2018 Text 1",
     "w": "dismiss",
@@ -6680,14 +6680,41 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
     "z": "毫无根据的；没有事实依据的",
     "e": "not based on facts or evidence",
     "m": ""
+  },
+  {
+    "g": "2018 Text 2",
+    "w": "sharpen",
+    "p": "/ˈʃɑːpən/",
+    "t": "v.",
+    "z": "提高；使更熟练（sharpen skills 提高技能，第27题）",
+    "e": "improve; refine",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 2",
+    "w": "boast",
+    "p": "/bəʊst/",
+    "t": "v.",
+    "z": "吹嘘；夸耀（boast about sth，第27题）",
+    "e": "talk with excessive pride; brag",
+    "m": ""
+  },
+  {
+    "g": "2018 Text 2",
+    "w": "diverse",
+    "p": "/daɪˈvɜːs/",
+    "t": "adj.",
+    "z": "多种多样的（diverse sources 多样的信息来源，第28题）",
+    "e": "varied; of different kinds",
+    "m": ""
   }
 ];
  const vocabRoot=c=>c.w.split(' ← ').pop().toLowerCase();
- for(const c of boxed2018Text1){
+ for(const c of boxed2018){
   if(D.some(x=>x.g===c.g&&vocabRoot(x)===vocabRoot(c))) continue;
   const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
  }
- for(const root of new Set(boxed2018Text1.map(vocabRoot))){
+ for(const root of new Set(boxed2018.map(vocabRoot))){
   const matches=D.filter(c=>vocabRoot(c)===root);
   const groups=[...new Set(matches.map(c=>c.g))].sort();
   if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';

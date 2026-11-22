@@ -6720,6 +6720,16 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
   if(groups.length>1)for(const c of matches)c.m=groups.join(' · ')+' · （'+groups.length+' 次）';
  }
 }
+{
+ const c={"g":"2019 Text 1","w":"imposed ← impose","p":"/ɪmˈpəʊz/","t":"v.（过去分词）","z":"施加；强制推行（这里指英国监管机构对大银行高管施行一项新规定）","e":"officially introduce or enforce a rule","m":""};
+ const vocabRoot=x=>x.w.split(' ← ').pop().toLowerCase();
+ if(!D.some(x=>x.g===c.g&&vocabRoot(x)===vocabRoot(c))){
+  const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
+ }
+ const matches=D.filter(x=>vocabRoot(x)===vocabRoot(c));
+ const groups=[...new Set(matches.map(x=>x.g))].sort();
+ if(groups.length>1)for(const x of matches)x.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+}
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));

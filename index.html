@@ -6742,6 +6742,18 @@ D.splice(D.findIndex(c=>c.g>'2015 Text 4'),0,...[
   if(groups.length>1)for(const x of matches)x.m=groups.join(' · ')+' · （'+groups.length+' 次）';
  }
 }
+{
+ const boxed=[{"g":"2019 Text 4","w":"factual","p":"/ˈfæktʃuəl/","t":"adj.","z":"基于事实的；如实的（第40题：factual account 如实叙述）","e":"based on facts","m":""},{"g":"2019 Text 4","w":"account","p":"/əˈkaʊnt/","t":"n.","z":"叙述；报道（第40题：give a factual account of 如实叙述……，不是“账户”）","e":"description; report","m":""}];
+ const vocabRoot=x=>x.w.split(' ← ').pop().toLowerCase();
+ for(const c of boxed){
+  if(!D.some(x=>x.g===c.g&&vocabRoot(x)===vocabRoot(c))){
+   const i=D.findIndex(x=>x.g>c.g);D.splice(i<0?D.length:i,0,c);
+  }
+  const matches=D.filter(x=>vocabRoot(x)===vocabRoot(c));
+  const groups=[...new Set(matches.map(x=>x.g))].sort();
+  if(groups.length>1)for(const x of matches)x.m=groups.join(' · ')+' · （'+groups.length+' 次）';
+ }
+}
 const gs=[...new Set(D.map(c=>c.g))];
 gs.forEach(g=>{const o=document.createElement('option');o.value=g;o.textContent=g;$('g').appendChild(o)});
 const esc=s=>String(s).replace(/[&<>]/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[m]));
